@@ -28,3 +28,27 @@ export const companyStats = [
     { label: "Digital Products", value: "12+" },
     { label: "Service Uptime", value: "99.9%" },
 ];
+
+export const newsroomItems = [
+    {
+        category: "Product",
+        date: "2026.07.08",
+        title: "Nexora introduces a new AI workflow platform",
+        description:
+            "기업 내부 업무 흐름을 더 빠르게 연결하기 위한 AI 기반 워크플로우 플랫폼을 공개했습니다.",
+    },
+    {
+        category: "Technology",
+        date: "2026.07.05",
+        title: "Improving cloud reliability for enterprise services",
+        description:
+            "안정적인 서비스 운영을 위해 클라우드 인프라 모니터링과 배포 구조를 개선했습니다.",
+    },
+    {
+        category: "Company",
+        date: "2026.07.01",
+        title: "Nexora expands its digital experience strategy",
+        description:
+            "사용자 중심의 웹 경험과 데이터 기반 서비스 설계를 중심으로 디지털 전략을 확장합니다.",
+    },
+];

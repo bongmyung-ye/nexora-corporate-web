@@ -2,6 +2,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { BusinessSection } from "./components/BusinessSection";
+import { NewsroomSection } from "./components/NewsroomSection";
 import { Footer } from "./components/Footer";
 
 function App() {
@@ -23,16 +24,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="newsroom">
-          <div className="section-heading">
-            <span className="eyebrow">Newsroom</span>
-            <h2>Latest updates</h2>
-            <p>
-              제품 개선, 기술 실험, 서비스 운영 경험을 바탕으로 꾸준히 성장하는
-              기업형 웹 플랫폼을 만들어갑니다.
-            </p>
-          </div>
-        </section>
+        <NewsroomSection />
       </main>
       <Footer />
     </>
