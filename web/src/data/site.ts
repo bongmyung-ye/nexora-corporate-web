@@ -1,6 +1,7 @@
 export const navigationItems = [
     { label: "Company", href: "#company" },
     { label: "Business", href: "#business" },
+    { label: "Highlights", href: "#highlights" },
     { label: "Sustainability", href: "#sustainability" },
     { label: "Newsroom", href: "#newsroom" },
 ];
@@ -27,6 +28,30 @@ export const companyStats = [
     { label: "Business Areas", value: "03" },
     { label: "Digital Products", value: "12+" },
     { label: "Service Uptime", value: "99.9%" },
+];
+
+export const corporateHighlights = [
+    {
+        title: "Engineering Focus",
+        description:
+            "서비스 안정성, 유지보수성, 확장성을 고려한 프론트엔드 구조와 컴포넌트 설계를 우선합니다.",
+    },
+    {
+        title: "Operational Quality",
+        description:
+            "사용자 경험뿐 아니라 배포, 성능, 접근성, 운영 흐름까지 함께 고려한 웹 서비스를 지향합니다.",
+    },
+    {
+        title: "Data-driven Content",
+        description:
+            "정적인 화면 구성에 그치지 않고, 구조화된 데이터를 기반으로 콘텐츠를 일관되게 렌더링합니다.",
+    },
+];
+
+export const highlightMetrics = [
+    { label: "Reusable Components", value: "08+" },
+    { label: "Responsive Sections", value: "05" },
+    { label: "Structured Data Groups", value: "04" },
 ];
 
 export const newsroomItems = [

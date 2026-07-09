@@ -2,6 +2,7 @@ import "./App.css";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { BusinessSection } from "./components/BusinessSection";
+import { CorporateHighlightsSection } from "./components/CorporateHighlightsSection";
 import { NewsroomSection } from "./components/NewsroomSection";
 import { Footer } from "./components/Footer";
 
@@ -12,6 +13,7 @@ function App() {
       <main>
         <HeroSection />
         <BusinessSection />
+        <CorporateHighlightsSection />
 
         <section className="section muted-section" id="sustainability">
           <div className="section-heading">
