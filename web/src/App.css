@@ -1295,3 +1295,149 @@
     flex-direction: column;
   }
 }
+
+.media-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-section::before {
+  content: "";
+  position: absolute;
+  left: -180px;
+  top: 120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  pointer-events: none;
+}
+
+.press-panel,
+.sns-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.press-item {
+  position: relative;
+  transition:
+    padding-left 0.22s ease,
+    background 0.22s ease;
+}
+
+.press-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #2563eb;
+  transform: translateY(-50%);
+  transition: width 0.22s ease;
+}
+
+.press-item:hover {
+  padding-left: 18px;
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.04), transparent);
+}
+
+.press-item:hover::before {
+  width: 8px;
+}
+
+.press-item:hover h3 {
+  color: #2563eb;
+}
+
+.sns-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.sns-card::after {
+  content: "";
+  position: absolute;
+  right: -48px;
+  bottom: -48px;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  transition:
+    transform 0.24s ease,
+    opacity 0.24s ease;
+}
+
+.sns-card:hover::after {
+  transform: translate3d(-18px, -18px, 0) scale(1.08);
+  opacity: 1;
+}
+
+.investment-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.investment-card::after {
+  content: "";
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(147, 197, 253, 0.34);
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition:
+    opacity 0.24s ease,
+    transform 0.24s ease;
+}
+
+.investment-card:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.investment-card span {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  right: -160px;
+  bottom: -220px;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.08);
+  pointer-events: none;
+}
+
+.footer-brand,
+.footer-links,
+.footer-info {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-links a {
+  width: fit-content;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  transform: translateX(6px);
+}
