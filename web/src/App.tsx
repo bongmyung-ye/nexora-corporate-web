@@ -5,8 +5,11 @@ import { BusinessSection } from "./components/BusinessSection";
 import { CorporateHighlightsSection } from "./components/CorporateHighlightsSection";
 import { NewsroomSection } from "./components/NewsroomSection";
 import { Footer } from "./components/Footer";
+import { useScrollReveal } from "./hooks/useScrollReveal";
 
 function App() {
+  useScrollReveal();
+
   return (
     <>
       <Header />
@@ -15,7 +18,11 @@ function App() {
         <BusinessSection />
         <CorporateHighlightsSection />
 
-        <section className="section muted-section" id="sustainability">
+        <section
+          className="section muted-section reveal"
+          id="sustainability"
+          data-reveal
+        >
           <div className="section-heading">
             <span className="eyebrow">Sustainability</span>
             <h2>지속 가능한 성장을 위한 디지털 책임</h2>

@@ -2,7 +2,7 @@ import { businessAreas } from "../data/site";
 
 export function BusinessSection() {
     return (
-        <section className="section" id="business">
+        <section className="section reveal" id="business" data-reveal>
             <div className="section-heading">
                 <span className="eyebrow">Business</span>
                 <h2>기술과 비즈니스를 연결하는 핵심 영역</h2>

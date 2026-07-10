@@ -3,6 +3,13 @@ import { companyStats } from "../data/site";
 export function HeroSection() {
     return (
         <section className="hero" id="company">
+            <div className="hero-background" aria-hidden="true">
+                <span className="hero-orb hero-orb-large" />
+                <span className="hero-orb hero-orb-small" />
+                <span className="hero-line hero-line-one" />
+                <span className="hero-line hero-line-two" />
+            </div>
+
             <div className="hero-content">
                 <span className="eyebrow">AI-driven corporate platform</span>
 
@@ -25,16 +32,28 @@ export function HeroSection() {
                 </div>
             </div>
 
-            <div className="hero-panel" aria-label="Company summary">
-                <div className="panel-label">Company Overview</div>
+            <div className="hero-visual" aria-label="Company motion summary">
+                <div className="hero-panel">
+                    <div className="panel-label">Company Overview</div>
 
-                <div className="stat-grid">
-                    {companyStats.map((item) => (
-                        <div key={item.label} className="stat-card">
-                            <strong>{item.value}</strong>
-                            <span>{item.label}</span>
-                        </div>
-                    ))}
+                    <div className="stat-grid">
+                        {companyStats.map((item) => (
+                            <div key={item.label} className="stat-card">
+                                <strong>{item.value}</strong>
+                                <span>{item.label}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="floating-card floating-card-primary">
+                    <span>AI Model</span>
+                    <strong>Connected</strong>
+                </div>
+
+                <div className="floating-card floating-card-secondary">
+                    <span>Cloud</span>
+                    <strong>Stable</strong>
                 </div>
             </div>
         </section>

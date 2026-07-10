@@ -2,7 +2,7 @@ import { newsroomItems } from "../data/site";
 
 export function NewsroomSection() {
     return (
-        <section className="section newsroom-section" id="newsroom">
+        <section className="section newsroom-section reveal" id="newsroom" data-reveal>
             <div className="section-heading">
                 <span className="eyebrow">Newsroom</span>
                 <h2>Latest updates from Nexora</h2>

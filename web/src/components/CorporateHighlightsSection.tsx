@@ -2,7 +2,11 @@ import { corporateHighlights, highlightMetrics } from "../data/site";
 
 export function CorporateHighlightsSection() {
     return (
-        <section className="section corporate-highlights" id="highlights">
+        <section
+            className="section corporate-highlights reveal"
+            id="highlights"
+            data-reveal
+        >
             <div className="highlight-layout">
                 <div className="highlight-panel">
                     <span className="eyebrow">Highlights</span>
