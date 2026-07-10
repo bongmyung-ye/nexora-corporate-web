@@ -1,0 +1,568 @@
+:root {
+  color-scheme: light;
+
+  --page-background: #f5f7fb;
+  --surface-primary: #ffffff;
+  --surface-secondary: #f8fafc;
+  --surface-tertiary: #eef2f7;
+  --surface-elevated: rgba(255, 255, 255, 0.86);
+
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-subtle: rgba(15, 23, 42, 0.09);
+  --border-strong: rgba(15, 23, 42, 0.15);
+
+  --accent-primary: #2563eb;
+  --accent-secondary: #38bdf8;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+
+  --header-background: rgba(255, 255, 255, 0.86);
+  --button-background: #0f172a;
+  --button-text: #ffffff;
+
+  --hero-start: #f8fafc;
+  --hero-end: #eef2ff;
+
+  --shadow-card: 0 22px 70px rgba(15, 23, 42, 0.08);
+  --shadow-panel: 0 26px 90px rgba(15, 23, 42, 0.14);
+
+  --footer-background: #0f172a;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --page-background: #070b14;
+  --surface-primary: #0c1322;
+  --surface-secondary: #111a2c;
+  --surface-tertiary: #182337;
+  --surface-elevated: rgba(12, 19, 34, 0.88);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #a9b7ca;
+  --text-tertiary: #718198;
+  --text-inverse: #07101f;
+
+  --border-subtle: rgba(148, 163, 184, 0.14);
+  --border-strong: rgba(148, 163, 184, 0.24);
+
+  --accent-primary: #60a5fa;
+  --accent-secondary: #38bdf8;
+  --accent-soft: rgba(96, 165, 250, 0.12);
+
+  --header-background: rgba(7, 11, 20, 0.84);
+  --button-background: #f8fafc;
+  --button-text: #07101f;
+
+  --hero-start: #070b14;
+  --hero-end: #0e1730;
+
+  --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.28);
+  --shadow-panel: 0 30px 100px rgba(0, 0, 0, 0.36);
+
+  --footer-background: #050812;
+}
+
+html,
+body,
+#root {
+  background: var(--page-background);
+  color: var(--text-primary);
+}
+
+body {
+  color: var(--text-primary);
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--accent-primary);
+}
+
+html.is-theme-changing *,
+html.is-theme-changing *::before,
+html.is-theme-changing *::after {
+  transition:
+    color 0.26s ease,
+    background-color 0.26s ease,
+    border-color 0.26s ease,
+    box-shadow 0.26s ease,
+    opacity 0.26s ease !important;
+}
+
+.site-header {
+  background: var(--header-background);
+  border-color: var(--border-subtle);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  color: var(--text-primary);
+}
+
+.desktop-nav a {
+  color: var(--text-secondary);
+}
+
+.desktop-nav a:hover {
+  color: var(--text-primary);
+}
+
+.menu-button {
+  color: var(--text-primary);
+  background: var(--surface-primary);
+  border-color: var(--border-strong);
+}
+
+.menu-button span {
+  background: var(--text-primary);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.theme-toggle-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 62px;
+  height: 34px;
+  padding: 3px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface-secondary);
+  box-shadow: inset 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+.theme-toggle-icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  color: var(--text-tertiary);
+}
+
+.theme-toggle-icon svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface-primary);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(28px);
+}
+
+.theme-toggle[data-theme="light"] .theme-toggle-icon-sun {
+  color: #f59e0b;
+}
+
+.theme-toggle[data-theme="dark"] .theme-toggle-icon-moon {
+  color: #93c5fd;
+}
+
+.theme-toggle:focus-visible,
+.menu-button:focus-visible,
+.header-action:focus-visible,
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.light-button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-primary) 38%, transparent);
+  outline-offset: 3px;
+}
+
+.header-action,
+.primary-button {
+  color: var(--button-text);
+  background: var(--button-background);
+}
+
+.secondary-button {
+  color: var(--text-primary);
+  background: var(--surface-primary);
+  border-color: var(--border-strong);
+}
+
+.scroll-progress {
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+}
+
+.hero {
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      color-mix(in srgb, var(--accent-primary) 20%, transparent),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 48% 82%,
+      color-mix(in srgb, var(--accent-secondary) 14%, transparent),
+      transparent 28%
+    ),
+    linear-gradient(135deg, var(--hero-start), var(--hero-end));
+}
+
+.hero h1,
+.section-heading h2,
+.ai-company-description h2,
+.investment-header h2 {
+  color: var(--text-primary);
+}
+
+.eyebrow {
+  color: var(--accent-primary);
+}
+
+.hero p,
+.section-heading p,
+.ai-company-description p,
+.portfolio-card p,
+.press-panel p,
+.sns-card p,
+.investment-card p {
+  color: var(--text-secondary);
+}
+
+.hero-panel,
+.floating-card {
+  background: var(--surface-elevated);
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-panel);
+}
+
+.panel-label,
+.floating-card strong {
+  color: var(--text-primary);
+}
+
+.floating-card span,
+.stat-card span {
+  color: var(--text-secondary);
+}
+
+.stat-card {
+  background: var(--surface-secondary);
+}
+
+.stat-card strong {
+  color: var(--text-primary);
+}
+
+.stat-card:hover {
+  background: var(--surface-tertiary);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-grid-pattern {
+  background-image:
+    linear-gradient(
+      color-mix(in srgb, var(--accent-primary) 17%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--accent-primary) 17%, transparent) 1px,
+      transparent 1px
+    );
+}
+
+.hero-orb-large {
+  background: color-mix(in srgb, var(--accent-primary) 16%, transparent);
+}
+
+.hero-orb-medium {
+  background: color-mix(in srgb, #818cf8 14%, transparent);
+}
+
+.hero-orb-small {
+  background: color-mix(in srgb, var(--accent-secondary) 16%, transparent);
+}
+
+.section,
+.business-portfolio-section,
+.investment-section {
+  background-color: var(--surface-primary);
+}
+
+.ai-company-section {
+  background: linear-gradient(
+    180deg,
+    var(--surface-primary),
+    var(--surface-secondary)
+  );
+}
+
+.ai-company-section::before,
+.business-portfolio-section::before,
+.media-section::before {
+  background: var(--accent-soft);
+}
+
+.statement-lines p {
+  color: var(--text-primary);
+}
+
+.statement-lines p:nth-child(2) {
+  color: var(--accent-primary);
+}
+
+.business-portfolio-section {
+  background:
+    radial-gradient(
+      circle at 10% 12%,
+      color-mix(in srgb, var(--accent-primary) 8%, transparent),
+      transparent 28%
+    ),
+    linear-gradient(
+      180deg,
+      var(--surface-primary),
+      var(--surface-secondary)
+    );
+}
+
+.portfolio-card {
+  color: var(--text-primary);
+  background: linear-gradient(
+    180deg,
+    var(--surface-secondary),
+    var(--surface-primary)
+  );
+  border-color: var(--border-subtle);
+  box-shadow: none;
+}
+
+.portfolio-card:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-primary) 34%,
+    var(--border-subtle)
+  );
+  box-shadow: var(--shadow-card);
+}
+
+.portfolio-card h3 {
+  color: var(--text-primary);
+}
+
+.portfolio-card-top span,
+.portfolio-card-link {
+  color: var(--accent-primary);
+}
+
+.portfolio-card-top strong {
+  color: var(--text-tertiary);
+}
+
+.portfolio-card-featured {
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(96, 165, 250, 0.26),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #0b1220, #172554);
+  box-shadow: var(--shadow-panel);
+}
+
+.portfolio-card-featured h3,
+.portfolio-card-featured .featured-business-footer span {
+  color: #ffffff;
+}
+
+.portfolio-card-featured p {
+  color: #cbd5e1;
+}
+
+.media-section {
+  background: var(--surface-secondary);
+}
+
+.press-panel,
+.sns-panel {
+  background: var(--surface-primary);
+  box-shadow: var(--shadow-card);
+}
+
+.press-item {
+  border-color: var(--border-subtle);
+}
+
+.press-item h3,
+.sns-card h3 {
+  color: var(--text-primary);
+}
+
+.press-item time {
+  color: var(--text-tertiary);
+}
+
+.press-item:hover {
+  background: linear-gradient(
+    90deg,
+    var(--accent-soft),
+    transparent
+  );
+}
+
+.press-item:hover h3,
+.press-item span,
+.sns-card span {
+  color: var(--accent-primary);
+}
+
+.sns-card {
+  background: var(--surface-secondary);
+}
+
+.sns-card:hover {
+  background: var(--surface-tertiary);
+}
+
+.sns-card::after {
+  background: var(--accent-soft);
+}
+
+.investment-section {
+  background:
+    radial-gradient(
+      circle at 88% 20%,
+      color-mix(in srgb, var(--accent-primary) 16%, transparent),
+      transparent 26%
+    ),
+    var(--surface-primary);
+}
+
+.investment-card {
+  background: #0b1220;
+}
+
+.investment-card:hover {
+  background: #172554;
+}
+
+.investment-card h3 {
+  color: #ffffff;
+}
+
+.investment-card p {
+  color: #cbd5e1;
+}
+
+.investment-card span {
+  color: #93c5fd;
+}
+
+.site-footer {
+  background: var(--footer-background);
+}
+
+.footer-brand strong,
+.footer-links span,
+.footer-info span {
+  color: #ffffff;
+}
+
+.footer-brand p,
+.footer-info p,
+.footer-links a {
+  color: #94a3b8;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+:root[data-theme="dark"] .sustainability-preview {
+  background:
+    radial-gradient(
+      circle at 15% 22%,
+      rgba(96, 165, 250, 0.2),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #050812, #0d1731);
+}
+
+:root[data-theme="dark"] .sustainability-card {
+  background: rgba(15, 23, 42, 0.58);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+
+:root[data-theme="dark"] .sustainability-card:hover {
+  background: rgba(30, 41, 59, 0.72);
+}
+
+:root[data-theme="dark"] .hero-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(96, 165, 250, 0.42),
+    transparent
+  );
+}
+
+:root[data-theme="dark"] .site-footer::before {
+  background: rgba(59, 130, 246, 0.12);
+}
+
+@media (max-width: 900px) {
+  .header-tools {
+    margin-left: auto;
+  }
+
+  .desktop-nav {
+    background: var(--surface-elevated);
+    border-color: var(--border-subtle);
+    box-shadow: var(--shadow-card);
+  }
+
+  .desktop-nav a:hover {
+    background: var(--surface-secondary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-theme-changing *,
+  html.is-theme-changing *::before,
+  html.is-theme-changing *::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  .theme-toggle-thumb {
+    transition-duration: 0.01ms;
+  }
+}

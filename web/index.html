@@ -1,11 +1,53 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8fafc" />
+
+    <script>
+      (() => {
+        const storageKey = "nexora-theme";
+
+        try {
+          const storedTheme = window.localStorage.getItem(storageKey);
+          const systemTheme = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches
+            ? "dark"
+            : "light";
+
+          const theme =
+            storedTheme === "light" || storedTheme === "dark"
+              ? storedTheme
+              : systemTheme;
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+
+          const themeColor = document.querySelector(
+            'meta[name="theme-color"]',
+          );
+
+          if (themeColor) {
+            themeColor.setAttribute(
+              "content",
+              theme === "dark" ? "#070b14" : "#f8fafc",
+            );
+          }
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+
+    <title>Nexora Corporate Web</title>
   </head>
+
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

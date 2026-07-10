@@ -235,6 +235,7 @@
 
 .hero-visual {
   position: relative;
+  padding-bottom: 52px;
   animation: heroVisualIn 1s ease 0.12s both;
 }
 
@@ -313,8 +314,10 @@
 }
 
 .floating-card-secondary {
-  left: -36px;
-  bottom: 36px;
+  left: -118px;
+  top: 172px;
+  bottom: auto;
+  z-index: 3;
   animation: floatCardTwo 7s ease-in-out infinite;
 }
 
@@ -819,11 +822,11 @@
 @keyframes floatCardTwo {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(-7deg);
   }
 
   50% {
-    transform: translate3d(12px, -12px, 0) rotate(2deg);
+    transform: translate3d(6px, -8px, 0) rotate(-4deg);
   }
 }
 
@@ -1022,8 +1025,8 @@
 }
 
 .floating-card-tertiary {
-  right: 34px;
-  bottom: -28px;
+  right: 28px;
+  bottom: -24px;
   animation: floatCardThree 8s ease-in-out infinite;
 }
 

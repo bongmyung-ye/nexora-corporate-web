@@ -1,4 +1,7 @@
 import "./App.css";
+import "./styles/theme.css";
+import "./styles/interface.css";
+import "./styles/header.css";
 import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { SustainabilityPreviewSection } from "./components/SustainabilityPreviewSection";
@@ -18,6 +21,7 @@ function App() {
     <>
       <div className="scroll-progress" aria-hidden="true" />
       <Header />
+
       <main>
         <HeroSection />
         <SustainabilityPreviewSection />
@@ -26,6 +30,7 @@ function App() {
         <MediaSection />
         <InvestmentSection />
       </main>
+
       <Footer />
     </>
   );

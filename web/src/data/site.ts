@@ -1,15 +1,44 @@
 export const navigationItems = [
-    { label: "Company", href: "#company" },
-    { label: "Business", href: "#business" },
-    { label: "Sustainability", href: "#sustainability" },
-    { label: "Media", href: "#media" },
-    { label: "Investment", href: "#investment" },
-];
+    {
+        label: "Company",
+        href: "#company",
+        sectionIds: ["company"],
+    },
+    {
+        label: "Sustainability",
+        href: "#sustainability",
+        sectionIds: ["sustainability"],
+    },
+    {
+        label: "Business",
+        href: "#business",
+        sectionIds: ["partners", "business"],
+    },
+    {
+        label: "Media",
+        href: "#media",
+        sectionIds: ["media"],
+    },
+    {
+        label: "Investment",
+        href: "#investment",
+        sectionIds: ["investment"],
+    },
+] as const;
 
 export const companyStats = [
-    { label: "Business Areas", value: "08" },
-    { label: "Digital Products", value: "12+" },
-    { label: "Service Uptime", value: "99.9%" },
+    {
+        label: "Business Areas",
+        value: "08",
+    },
+    {
+        label: "Digital Products",
+        value: "12+",
+    },
+    {
+        label: "Service Uptime",
+        value: "99.9%",
+    },
 ];
 
 export const sustainabilityHighlights = [
@@ -90,22 +119,26 @@ export const businessPortfolio = [
 export const pressItems = [
     {
         category: "Press",
-        title: "Nexora launches a new AI workflow prototype for enterprise teams",
+        title:
+            "Nexora launches a new AI workflow prototype for enterprise teams",
         date: "2026.07.10",
     },
     {
         category: "Press",
-        title: "Nexora improves cloud operation standards for corporate services",
+        title:
+            "Nexora improves cloud operation standards for corporate services",
         date: "2026.07.08",
     },
     {
         category: "Press",
-        title: "Nexora expands digital experience research for service platforms",
+        title:
+            "Nexora expands digital experience research for service platforms",
         date: "2026.07.04",
     },
     {
         category: "Press",
-        title: "Nexora publishes frontend architecture notes for product teams",
+        title:
+            "Nexora publishes frontend architecture notes for product teams",
         date: "2026.07.01",
     },
 ];
@@ -134,15 +167,18 @@ export const snsItems = [
 export const investmentLinks = [
     {
         title: "Stock Information",
-        description: "기업의 성장 지표와 주요 투자 정보를 한눈에 확인할 수 있도록 구성합니다.",
+        description:
+            "기업의 성장 지표와 주요 투자 정보를 한눈에 확인할 수 있도록 구성합니다.",
     },
     {
         title: "Financial Reports",
-        description: "실적, 보고서, 운영 성과를 체계적으로 정리하는 정보 구조를 설계합니다.",
+        description:
+            "실적, 보고서, 운영 성과를 체계적으로 정리하는 정보 구조를 설계합니다.",
     },
     {
         title: "IR Archive",
-        description: "투자자 관점에서 필요한 주요 자료를 접근하기 쉽게 배치합니다.",
+        description:
+            "투자자 관점에서 필요한 주요 자료를 접근하기 쉽게 배치합니다.",
     },
 ];
 
@@ -153,23 +189,36 @@ export const footerLinks = [
     "Ethics Report",
 ];
 
-export const businessAreas = businessPortfolio.slice(0, 3).map((item) => ({
-    title: item.title,
-    description: item.description,
-}));
+export const businessAreas = businessPortfolio
+    .slice(0, 3)
+    .map(({ title, description }) => ({
+        title,
+        description,
+    }));
 
 export const corporateHighlights = sustainabilityHighlights;
 
 export const highlightMetrics = [
-    { label: "Reusable Components", value: "12+" },
-    { label: "Responsive Sections", value: "08" },
-    { label: "Structured Data Groups", value: "07" },
+    {
+        label: "Reusable Components",
+        value: "12+",
+    },
+    {
+        label: "Responsive Sections",
+        value: "08",
+    },
+    {
+        label: "Structured Data Groups",
+        value: "07",
+    },
 ];
 
-export const newsroomItems = pressItems.slice(0, 3).map((item) => ({
-    category: item.category,
-    date: item.date,
-    title: item.title,
-    description:
-        "제품 개선, 기술 실험, 서비스 운영 경험을 바탕으로 꾸준히 성장하는 기업형 웹 플랫폼을 만들어갑니다.",
-}));
+export const newsroomItems = pressItems
+    .slice(0, 3)
+    .map(({ category, date, title }) => ({
+        category,
+        date,
+        title,
+        description:
+            "제품 개선, 기술 실험, 서비스 운영 경험을 바탕으로 꾸준히 성장하는 기업형 웹 플랫폼을 만들어갑니다.",
+    }));
