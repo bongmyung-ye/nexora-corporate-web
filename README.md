@@ -8,7 +8,7 @@ The project is inspired by enterprise-style company websites, but all branding, 
 
 ## Overview
 
-This website presents a fictional AI-driven company with sections for company overview, business areas, sustainability, and newsroom updates.
+This website presents a fictional AI-driven company with sections for company overview, business areas, corporate highlights, sustainability, and newsroom updates.
 
 The main goal of this project is to build a clean, maintainable, and production-oriented frontend that feels suitable for a real corporate website.
 
@@ -24,9 +24,12 @@ The main goal of this project is to build a clean, maintainable, and production-
 
 - Responsive corporate landing page
 - Sticky header navigation
+- Mobile navigation menu
 - Hero section with company summary cards
 - Business area cards rendered from structured data
-- Sustainability and newsroom sections
+- Corporate highlights section
+- Sustainability section
+- Newsroom cards rendered from structured data
 - Component-based project structure
 - Clean styling with plain CSS
 
@@ -35,6 +38,8 @@ The main goal of this project is to build a clean, maintainable, and production-
 ```text
 nexora-corporate-web/
 ├─ README.md
+├─ docs/
+│  └─ deployment.md
 └─ web/
    ├─ src/
    │  ├─ components/
@@ -46,3 +51,47 @@ nexora-corporate-web/
    ├─ package.json
    └─ index.html
 ```
+
+## Getting Started
+
+```bash
+cd web
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+cd web
+npm run build
+```
+
+## Preview
+
+```bash
+cd web
+npm run preview
+```
+
+## Deployment
+
+Deployment notes are available in:
+
+```text
+docs/deployment.md
+```
+
+Recommended frontend deployment settings:
+
+```text
+Base directory: web
+Build command: npm run build
+Publish directory: dist
+```
+
+## Purpose
+
+This repository is part of a frontend and full-stack development portfolio.
+
+It is designed to demonstrate practical UI implementation, component organization, responsive web development, structured content rendering, and a production-minded project structure.
