@@ -8,12 +8,15 @@ import { MediaSection } from "./components/MediaSection";
 import { InvestmentSection } from "./components/InvestmentSection";
 import { Footer } from "./components/Footer";
 import { useScrollReveal } from "./hooks/useScrollReveal";
+import { useScrollProgress } from "./hooks/useScrollProgress";
 
 function App() {
   useScrollReveal();
+  useScrollProgress();
 
   return (
     <>
+      <div className="scroll-progress" aria-hidden="true" />
       <Header />
       <main>
         <HeroSection />

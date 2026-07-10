@@ -5,9 +5,11 @@ export function HeroSection() {
         <section className="hero" id="company">
             <div className="hero-background" aria-hidden="true">
                 <span className="hero-orb hero-orb-large" />
+                <span className="hero-orb hero-orb-medium" />
                 <span className="hero-orb hero-orb-small" />
                 <span className="hero-line hero-line-one" />
                 <span className="hero-line hero-line-two" />
+                <span className="hero-grid-pattern" />
             </div>
 
             <div className="hero-content">
@@ -54,6 +56,11 @@ export function HeroSection() {
                 <div className="floating-card floating-card-secondary">
                     <span>Cloud</span>
                     <strong>Stable</strong>
+                </div>
+
+                <div className="floating-card floating-card-tertiary">
+                    <span>Data Flow</span>
+                    <strong>Live</strong>
                 </div>
             </div>
         </section>
