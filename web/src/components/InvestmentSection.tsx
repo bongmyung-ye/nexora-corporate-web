@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { investmentLinks } from "../data/site";
 
 export function InvestmentSection() {
+    const { t } = useTranslation();
+
     return (
         <section
             className="section investment-section reveal"
@@ -8,16 +11,30 @@ export function InvestmentSection() {
             data-reveal
         >
             <div className="investment-header">
-                <span className="eyebrow">Investment</span>
-                <h2>Transparent information architecture for business growth.</h2>
+                <span className="eyebrow">
+                    {t("investment.eyebrow")}
+                </span>
+
+                <h2>{t("investment.title")}</h2>
             </div>
 
             <div className="investment-grid">
                 {investmentLinks.map((item) => (
-                    <article className="investment-card" key={item.title}>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
-                        <span>View more</span>
+                    <article
+                        className="investment-card"
+                        key={item.id}
+                    >
+                        <h3>
+                            {t(`investment.items.${item.id}.title`)}
+                        </h3>
+
+                        <p>
+                            {t(
+                                `investment.items.${item.id}.description`,
+                            )}
+                        </p>
+
+                        <span>{t("investment.viewMore")}</span>
                     </article>
                 ))}
             </div>

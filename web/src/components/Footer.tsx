@@ -1,30 +1,36 @@
+import { useTranslation } from "react-i18next";
 import { footerLinks } from "../data/site";
 
 export function Footer() {
+    const { t } = useTranslation();
+    const currentYear = new Date().getFullYear();
+
     return (
         <footer className="site-footer" id="contact">
             <div className="footer-brand">
                 <strong>Nexora</strong>
-                <p>
-                    Fictional AI corporate website built with React, TypeScript, and
-                    original motion-focused UI implementation.
-                </p>
+                <p>{t("footer.description")}</p>
             </div>
 
             <div className="footer-links">
-                <span>Operations</span>
+                <span>{t("footer.sections.links")}</span>
+
                 {footerLinks.map((item) => (
-                    <a href="#company" key={item}>
-                        {item}
+                    <a href={item.href} key={item.id}>
+                        {t(`footer.links.${item.id}`)}
                     </a>
                 ))}
             </div>
 
             <div className="footer-info">
-                <span>Company Info</span>
-                <p>Digital Strategy Lab, Seoul</p>
-                <p>hello@nexora.example</p>
-                <p>© 2026 Nexora Labs. All rights reserved.</p>
+                <span>{t("footer.sections.company")}</span>
+                <p>{t("footer.location")}</p>
+                <p>crawl@nexora.dev</p>
+                <p>
+                    {t("footer.copyright", {
+                        year: currentYear,
+                    })}
+                </p>
             </div>
         </footer>
     );

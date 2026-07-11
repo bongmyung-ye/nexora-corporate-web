@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { businessPortfolio } from "../data/site";
 
 export function BusinessPortfolioSection() {
-    const [featuredBusiness, ...supportingBusinesses] = businessPortfolio;
+    const { t } = useTranslation();
+    const [featuredBusiness, ...supportingBusinesses] =
+        businessPortfolio;
 
     return (
         <section
@@ -10,44 +13,76 @@ export function BusinessPortfolioSection() {
             data-reveal
         >
             <div className="section-heading portfolio-heading">
-                <span className="eyebrow">Business</span>
-                <h2>AI와 디지털 경험을 중심으로 확장되는 비즈니스 포트폴리오</h2>
-                <p>
-                    다양한 산업 영역을 하나의 디지털 흐름으로 연결하고, 각 서비스가
-                    독립적으로 확장될 수 있는 구조를 설계합니다.
-                </p>
+                <span className="eyebrow">
+                    {t("business.eyebrow")}
+                </span>
+
+                <h2>{t("business.title")}</h2>
+
+                <p>{t("business.description")}</p>
             </div>
 
             <div className="portfolio-showcase">
                 <article className="portfolio-card portfolio-card-featured">
                     <div className="portfolio-card-top">
-                        <span>{featuredBusiness.tag}</span>
+                        <span>
+                            {t(
+                                `business.items.${featuredBusiness.id}.tag`,
+                            )}
+                        </span>
                         <strong>01</strong>
                     </div>
 
                     <div className="featured-business-copy">
-                        <h3>{featuredBusiness.title}</h3>
-                        <p>{featuredBusiness.description}</p>
+                        <h3>
+                            {t(
+                                `business.items.${featuredBusiness.id}.title`,
+                            )}
+                        </h3>
+
+                        <p>
+                            {t(
+                                `business.items.${featuredBusiness.id}.description`,
+                            )}
+                        </p>
                     </div>
 
                     <div className="featured-business-footer">
-                        <span>Core Business</span>
-                        <small>Strategic portfolio</small>
+                        <span>{t("business.featured.core")}</span>
+                        <small>
+                            {t("business.featured.portfolio")}
+                        </small>
                     </div>
                 </article>
 
                 <div className="portfolio-grid portfolio-support-grid">
                     {supportingBusinesses.map((item, index) => (
-                        <article className="portfolio-card portfolio-card-compact" key={item.title}>
+                        <article
+                            className="portfolio-card portfolio-card-compact"
+                            key={item.id}
+                        >
                             <div className="portfolio-card-top">
-                                <span>{item.tag}</span>
-                                <strong>{String(index + 2).padStart(2, "0")}</strong>
+                                <span>
+                                    {t(`business.items.${item.id}.tag`)}
+                                </span>
+                                <strong>
+                                    {String(index + 2).padStart(2, "0")}
+                                </strong>
                             </div>
 
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
+                            <h3>
+                                {t(`business.items.${item.id}.title`)}
+                            </h3>
 
-                            <div className="portfolio-card-link">View business</div>
+                            <p>
+                                {t(
+                                    `business.items.${item.id}.description`,
+                                )}
+                            </p>
+
+                            <div className="portfolio-card-link">
+                                {t("business.viewBusiness")}
+                            </div>
                         </article>
                     ))}
                 </div>

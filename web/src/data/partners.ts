@@ -18,111 +18,129 @@ import {
     SiVercel,
 } from "react-icons/si";
 
+export type PartnerCategory =
+    | "cloudInfrastructure"
+    | "cloudPlatform"
+    | "networkPlatform"
+    | "cloudHosting"
+    | "cloudComputing"
+    | "frontendPlatform"
+    | "webDeployment"
+    | "containerPlatform"
+    | "developmentPlatform"
+    | "devOpsPlatform"
+    | "applicationLanguage"
+    | "javascriptRuntime"
+    | "documentDatabase"
+    | "relationalDatabase"
+    | "inMemoryStorage"
+    | "communityPlatform";
+
 export interface TechnologyPartner {
     name: string;
-    category: string;
+    category: PartnerCategory;
     href: string;
     icon: IconType;
 }
 
-export const infrastructurePartners: TechnologyPartner[] = [
+export const infrastructurePartners = [
     {
         name: "Amazon Web Services",
-        category: "Cloud infrastructure",
+        category: "cloudInfrastructure",
         href: "https://aws.amazon.com/",
         icon: FaAws,
     },
     {
         name: "Google Cloud",
-        category: "Cloud platform",
+        category: "cloudPlatform",
         href: "https://cloud.google.com/",
         icon: SiGooglecloud,
     },
     {
         name: "Cloudflare",
-        category: "Network platform",
+        category: "networkPlatform",
         href: "https://www.cloudflare.com/",
         icon: SiCloudflare,
     },
     {
         name: "Hetzner",
-        category: "Cloud hosting",
+        category: "cloudHosting",
         href: "https://www.hetzner.com/",
         icon: SiHetzner,
     },
     {
         name: "DigitalOcean",
-        category: "Cloud computing",
+        category: "cloudComputing",
         href: "https://www.digitalocean.com/",
         icon: SiDigitalocean,
     },
     {
         name: "Vercel",
-        category: "Frontend platform",
+        category: "frontendPlatform",
         href: "https://vercel.com/",
         icon: SiVercel,
     },
     {
         name: "Netlify",
-        category: "Web deployment",
+        category: "webDeployment",
         href: "https://www.netlify.com/",
         icon: SiNetlify,
     },
     {
         name: "Docker",
-        category: "Container platform",
+        category: "containerPlatform",
         href: "https://www.docker.com/",
         icon: SiDocker,
     },
-];
+] satisfies TechnologyPartner[];
 
-export const developmentPartners: TechnologyPartner[] = [
+export const developmentPartners = [
     {
         name: "GitHub",
-        category: "Development platform",
+        category: "developmentPlatform",
         href: "https://github.com/",
         icon: SiGithub,
     },
     {
         name: "GitLab",
-        category: "DevOps platform",
+        category: "devOpsPlatform",
         href: "https://gitlab.com/",
         icon: SiGitlab,
     },
     {
         name: "TypeScript",
-        category: "Application language",
+        category: "applicationLanguage",
         href: "https://www.typescriptlang.org/",
         icon: SiTypescript,
     },
     {
         name: "Node.js",
-        category: "JavaScript runtime",
+        category: "javascriptRuntime",
         href: "https://nodejs.org/",
         icon: SiNodedotjs,
     },
     {
         name: "MongoDB",
-        category: "Document database",
+        category: "documentDatabase",
         href: "https://www.mongodb.com/",
         icon: SiMongodb,
     },
     {
         name: "PostgreSQL",
-        category: "Relational database",
+        category: "relationalDatabase",
         href: "https://www.postgresql.org/",
         icon: SiPostgresql,
     },
     {
         name: "Redis",
-        category: "In-memory storage",
+        category: "inMemoryStorage",
         href: "https://redis.io/",
         icon: SiRedis,
     },
     {
         name: "Discord",
-        category: "Community platform",
+        category: "communityPlatform",
         href: "https://discord.com/",
         icon: SiDiscord,
     },
-];
+] satisfies TechnologyPartner[];
