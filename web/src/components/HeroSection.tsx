@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { companyStats } from "../data/site";
 
 export function HeroSection() {
+    const { t } = useTranslation();
+
     return (
         <section className="hero" id="company">
             <div className="hero-background" aria-hidden="true">
@@ -13,54 +16,84 @@ export function HeroSection() {
             </div>
 
             <div className="hero-content">
-                <span className="eyebrow">AI-driven corporate platform</span>
+                <div className="heading-block hero-heading">
+                    <span className="eyebrow">
+                        {t("hero.eyebrow")}
+                    </span>
 
-                <h1>
-                    Building intelligent digital experiences for tomorrow’s businesses.
-                </h1>
+                    <h1 className="display-heading display-heading-hero">
+                        {t("hero.title")}
+                    </h1>
+                </div>
 
-                <p>
-                    Nexora는 데이터, 클라우드, 사용자 경험을 연결해 기업이 더 빠르게
-                    성장할 수 있는 디지털 기반을 설계합니다.
-                </p>
+                <p>{t("hero.description")}</p>
 
                 <div className="hero-actions">
-                    <a href="#business" className="primary-button">
-                        Explore Business
+                    <a
+                        href="#business"
+                        className="primary-button"
+                    >
+                        {t("hero.actions.business")}
                     </a>
-                    <a href="#sustainability" className="secondary-button">
-                        Our Values
+
+                    <a
+                        href="#sustainability"
+                        className="secondary-button"
+                    >
+                        {t("hero.actions.values")}
                     </a>
                 </div>
             </div>
 
-            <div className="hero-visual" aria-label="Company motion summary">
+            <div
+                className="hero-visual"
+                aria-label={t("hero.visualLabel")}
+            >
                 <div className="hero-panel">
-                    <div className="panel-label">Company Overview</div>
+                    <div className="panel-label">
+                        {t("hero.panelLabel")}
+                    </div>
 
                     <div className="stat-grid">
                         {companyStats.map((item) => (
-                            <div key={item.label} className="stat-card">
+                            <div
+                                key={item.id}
+                                className="stat-card"
+                            >
                                 <strong>{item.value}</strong>
-                                <span>{item.label}</span>
+                                <span>
+                                    {t(`hero.stats.${item.id}`)}
+                                </span>
                             </div>
                         ))}
                     </div>
                 </div>
 
                 <div className="floating-card floating-card-primary">
-                    <span>AI Model</span>
-                    <strong>Connected</strong>
+                    <span>
+                        {t("hero.floatingCards.aiModel.label")}
+                    </span>
+                    <strong>
+                        {t("hero.floatingCards.aiModel.value")}
+                    </strong>
                 </div>
 
                 <div className="floating-card floating-card-secondary">
-                    <span>Cloud</span>
-                    <strong>Stable</strong>
+                    <span>
+                        {t("hero.floatingCards.cloud.label")}
+                    </span>
+                    <strong>
+                        {t("hero.floatingCards.cloud.value")}
+                    </strong>
                 </div>
 
                 <div className="floating-card floating-card-tertiary">
-                    <span>Data Flow</span>
-                    <strong>Live</strong>
+                    <span>
+                        {t("hero.floatingCards.dataFlow.label")}
+                    </span>
+                    <strong>
+                        {t("hero.floatingCards.dataFlow.value")}
+                    </strong>
                 </div>
             </div>
         </section>

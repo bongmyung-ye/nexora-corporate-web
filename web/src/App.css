@@ -1590,3 +1590,221 @@
 .footer-links a:hover {
   transform: translateX(6px);
 }
+
+/* Display heading typography */
+
+.heading-block {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.display-heading {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+.display-heading::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 68px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary, #2563eb),
+    color-mix(
+      in srgb,
+      var(--accent-primary, #2563eb) 62%,
+      #7dd3fc
+    ),
+    var(--accent-primary, #2563eb)
+  );
+  background-size: 220% 100%;
+  box-shadow:
+    0 0 10px
+      color-mix(
+        in srgb,
+        var(--accent-primary, #2563eb) 28%,
+        transparent
+      );
+  opacity: 0.78;
+  content: "";
+  transform-origin: left center;
+  transition:
+    width 0.52s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.heading-block:hover .display-heading::after,
+.heading-block:focus-within .display-heading::after {
+  width: min(100%, 380px);
+  opacity: 1;
+  box-shadow:
+    0 0 18px
+      color-mix(
+        in srgb,
+        var(--accent-primary, #2563eb) 46%,
+        transparent
+      );
+  animation: display-heading-line 1.15s linear infinite;
+}
+
+.hero-content {
+  max-width: 760px;
+}
+
+.hero .display-heading-hero {
+  max-width: 760px;
+  font-size: clamp(3.5rem, 5.25vw, 5.45rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.sustainability-copy {
+  max-width: 660px;
+}
+
+.sustainability-copy .display-heading-section {
+  max-width: 660px;
+  color: #ffffff;
+  font-size: clamp(2.9rem, 3.9vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.07;
+  letter-spacing: -0.05em;
+}
+
+html[lang="ko"] .display-heading {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+html[lang="en"] .display-heading {
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+html[lang="ja"] .display-heading {
+  word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+html[lang="en"] .hero .display-heading-hero {
+  font-size: clamp(3.25rem, 4.75vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+html[lang="ja"] .hero .display-heading-hero {
+  font-size: clamp(3.2rem, 4.65vw, 4.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+html[lang="en"]
+  .sustainability-copy
+  .display-heading-section {
+  font-size: clamp(2.7rem, 3.6vw, 3.9rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+html[lang="ja"]
+  .sustainability-copy
+  .display-heading-section {
+  font-size: clamp(2.65rem, 3.5vw, 3.8rem);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+@keyframes display-heading-line {
+  from {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: -120% 50%;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero .display-heading-hero {
+    font-size: clamp(3.25rem, 6.2vw, 4.8rem);
+  }
+
+  .sustainability-copy .display-heading-section {
+    font-size: clamp(2.7rem, 4.8vw, 3.8rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .display-heading {
+    padding-bottom: 17px;
+  }
+
+  .display-heading::after {
+    width: 58px;
+  }
+
+  .heading-block:hover .display-heading::after,
+  .heading-block:focus-within .display-heading::after {
+    width: min(72%, 260px);
+  }
+
+  .hero-content,
+  .sustainability-copy {
+    max-width: 100%;
+  }
+
+  .hero .display-heading-hero {
+    max-width: 680px;
+    font-size: clamp(2.75rem, 10.5vw, 3.65rem);
+    line-height: 1.06;
+    letter-spacing: -0.048em;
+  }
+
+  .sustainability-copy .display-heading-section {
+    max-width: 620px;
+    font-size: clamp(2.35rem, 8.8vw, 3.05rem);
+    line-height: 1.1;
+    letter-spacing: -0.045em;
+  }
+
+  html[lang="en"] .hero .display-heading-hero,
+  html[lang="ja"] .hero .display-heading-hero {
+    font-size: clamp(2.55rem, 9.4vw, 3.4rem);
+  }
+
+  html[lang="en"]
+    .sustainability-copy
+    .display-heading-section,
+  html[lang="ja"]
+    .sustainability-copy
+    .display-heading-section {
+    font-size: clamp(2.2rem, 8vw, 2.9rem);
+  }
+}
+
+@media (hover: none) {
+  .display-heading::after {
+    width: 82px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .display-heading::after {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+}

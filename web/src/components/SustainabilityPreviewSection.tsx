@@ -1,6 +1,9 @@
+import { useTranslation } from "react-i18next";
 import { sustainabilityHighlights } from "../data/site";
 
 export function SustainabilityPreviewSection() {
+    const { t } = useTranslation();
+
     return (
         <section
             className="section sustainability-preview reveal"
@@ -8,23 +11,44 @@ export function SustainabilityPreviewSection() {
             data-reveal
         >
             <div className="sustainability-copy">
-                <span className="eyebrow">Sustainability</span>
-                <h2>Responsibility for a more sustainable digital future.</h2>
-                <p>
-                    Nexora는 AI 기반 서비스가 더 오래, 더 안정적으로 운영될 수 있도록
-                    기술적 책임과 사용자 경험을 함께 고려합니다.
-                </p>
+                <div className="heading-block sustainability-heading">
+                    <span className="eyebrow">
+                        {t("sustainability.eyebrow")}
+                    </span>
+
+                    <h2 className="display-heading display-heading-section">
+                        {t("sustainability.title")}
+                    </h2>
+                </div>
+
+                <p>{t("sustainability.description")}</p>
+
                 <a href="#business" className="light-button">
-                    Explore Our Approach
+                    {t("sustainability.action")}
                 </a>
             </div>
 
             <div className="sustainability-cards">
                 {sustainabilityHighlights.map((item, index) => (
-                    <article className="sustainability-card" key={item.title}>
-                        <span>{String(index + 1).padStart(2, "0")}</span>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
+                    <article
+                        className="sustainability-card"
+                        key={item.id}
+                    >
+                        <span>
+                            {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <h3>
+                            {t(
+                                `sustainability.items.${item.id}.title`,
+                            )}
+                        </h3>
+
+                        <p>
+                            {t(
+                                `sustainability.items.${item.id}.description`,
+                            )}
+                        </p>
                     </article>
                 ))}
             </div>
