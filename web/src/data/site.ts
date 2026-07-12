@@ -125,24 +125,23 @@ export const pressItems = [
 export const snsItems = [
     {
         id: "corporateWebsite",
-        type: "Blog",
-        title: "Designing a corporate website with motion and structure",
-        description:
-            "기업형 웹사이트에서 레이아웃, 콘텐츠 흐름, 인터랙션을 함께 설계하는 과정을 정리했습니다.",
+        href:
+            "https://github.com/bongmyung-ye/nexora-corporate-web",
     },
     {
         id: "motionUi",
-        type: "Video",
-        title: "Building motion-ready UI sections with React",
-        description:
-            "스크롤 reveal, floating card, responsive grid를 활용한 메인 페이지 구현 과정을 소개합니다.",
+        href:
+            "https://github.com/bongmyung-ye/nexora-corporate-web",
     },
     {
         id: "structuredContent",
-        type: "Story",
-        title: "How structured content improves portfolio projects",
-        description:
-            "데이터 기반 렌더링과 컴포넌트 분리가 포트폴리오 품질에 주는 영향을 다룹니다.",
+        href:
+            "https://github.com/bongmyung-ye/nexora-corporate-web",
+    },
+    {
+        id: "productionWorkflow",
+        href:
+            "https://github.com/bongmyung-ye/nexora-corporate-web",
     },
 ] as const;
 

@@ -196,6 +196,8 @@ const en = {
         sns: {
             eyebrow: "SNS Media",
             title: "Inside the build",
+            viewAll: "View all content",
+            openContent: "Open content",
             items: {
                 corporateWebsite: {
                     type: "Blog",
@@ -217,6 +219,13 @@ const en = {
                         "How structured content improves portfolio projects",
                     description:
                         "How data-driven rendering and component separation improve the quality of a portfolio project.",
+                },
+                productionWorkflow: {
+                    type: "Notes",
+                    title:
+                        "A frontend workflow designed for production",
+                    description:
+                        "A practical workflow covering component architecture, localization, responsive behavior, and deployment checks.",
                 },
             },
         },
