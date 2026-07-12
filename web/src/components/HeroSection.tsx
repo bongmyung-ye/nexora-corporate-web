@@ -5,95 +5,83 @@ export function HeroSection() {
     const { t } = useTranslation();
 
     return (
-        <section className="hero" id="company">
-            <div className="hero-background" aria-hidden="true">
-                <span className="hero-orb hero-orb-large" />
-                <span className="hero-orb hero-orb-medium" />
-                <span className="hero-orb hero-orb-small" />
-                <span className="hero-line hero-line-one" />
-                <span className="hero-line hero-line-two" />
-                <span className="hero-grid-pattern" />
+        <section
+            className="hero"
+            id="company"
+            aria-labelledby="hero-title"
+        >
+            <div className="hero-stage" aria-hidden="true">
+                <span className="hero-stage-glow hero-stage-glow-primary" />
+                <span className="hero-stage-glow hero-stage-glow-secondary" />
+                <span className="hero-stage-grid" />
+                <span className="hero-stage-line hero-stage-line-primary" />
+                <span className="hero-stage-line hero-stage-line-secondary" />
             </div>
 
-            <div className="hero-content">
-                <div className="heading-block hero-heading">
-                    <span className="eyebrow">
+            <div className="hero-shell">
+                <div className="hero-copy">
+                    <span className="eyebrow hero-eyebrow">
                         {t("hero.eyebrow")}
                     </span>
 
-                    <h1 className="display-heading display-heading-hero">
+                    <h1
+                        className="display-heading display-heading-hero"
+                        id="hero-title"
+                    >
                         {t("hero.title")}
                     </h1>
-                </div>
 
-                <p>{t("hero.description")}</p>
+                    <p className="hero-description">
+                        {t("hero.description")}
+                    </p>
 
-                <div className="hero-actions">
-                    <a
-                        href="#business"
-                        className="primary-button"
-                    >
-                        {t("hero.actions.business")}
-                    </a>
+                    <div className="hero-actions">
+                        <a
+                            className="primary-button"
+                            href="#business"
+                        >
+                            {t("hero.actions.business")}
+                        </a>
 
-                    <a
-                        href="#sustainability"
-                        className="secondary-button"
-                    >
-                        {t("hero.actions.values")}
-                    </a>
-                </div>
-            </div>
-
-            <div
-                className="hero-visual"
-                aria-label={t("hero.visualLabel")}
-            >
-                <div className="hero-panel">
-                    <div className="panel-label">
-                        {t("hero.panelLabel")}
+                        <a
+                            className="secondary-button"
+                            href="#sustainability"
+                        >
+                            {t("hero.actions.values")}
+                        </a>
                     </div>
+                </div>
 
-                    <div className="stat-grid">
+                <div className="hero-footer">
+                    <a
+                        className="hero-scroll-cue"
+                        href="#sustainability"
+                        aria-label={t("hero.scrollLabel")}
+                    >
+                        <span>{t("hero.scrollLabel")}</span>
+
+                        <span
+                            className="hero-scroll-line"
+                            aria-hidden="true"
+                        >
+                            <span />
+                        </span>
+                    </a>
+
+                    <dl
+                        className="hero-metrics"
+                        aria-label={t("hero.visualLabel")}
+                    >
                         {companyStats.map((item) => (
                             <div
+                                className="hero-metric"
                                 key={item.id}
-                                className="stat-card"
                             >
-                                <strong>{item.value}</strong>
-                                <span>
-                                    {t(`hero.stats.${item.id}`)}
-                                </span>
+                                <dt>{t(`hero.stats.${item.id}`)}</dt>
+                                <dd>{item.value}</dd>
                             </div>
                         ))}
-                    </div>
-                </div>
-
-                <div className="floating-card floating-card-primary">
-                    <span>
-                        {t("hero.floatingCards.aiModel.label")}
-                    </span>
-                    <strong>
-                        {t("hero.floatingCards.aiModel.value")}
-                    </strong>
-                </div>
-
-                <div className="floating-card floating-card-secondary">
-                    <span>
-                        {t("hero.floatingCards.cloud.label")}
-                    </span>
-                    <strong>
-                        {t("hero.floatingCards.cloud.value")}
-                    </strong>
-                </div>
-
-                <div className="floating-card floating-card-tertiary">
-                    <span>
-                        {t("hero.floatingCards.dataFlow.label")}
-                    </span>
-                    <strong>
-                        {t("hero.floatingCards.dataFlow.value")}
-                    </strong>
+                    </dl>
                 </div>
             </div>
         </section>

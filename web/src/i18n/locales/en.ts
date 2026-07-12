@@ -23,6 +23,7 @@ const en = {
             "Building intelligent digital experiences for tomorrow’s businesses.",
         description:
             "Nexora connects data, cloud infrastructure, and user experience to build a digital foundation that helps businesses grow faster.",
+        scrollLabel: "Explore next section",
         actions: {
             business: "Explore Business",
             values: "Our Values",
