@@ -9,6 +9,7 @@ import "./styles/business.css";
 import "./styles/media.css";
 import "./styles/investment.css";
 import "./styles/investment-chart-waveform.css";
+import "./styles/investment-responsive-navigation.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

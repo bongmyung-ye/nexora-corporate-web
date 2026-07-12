@@ -630,6 +630,74 @@ export function InvestmentSection() {
 
             <div className="investment-dashboard">
                 <div
+                    className="investment-grid"
+                    role="tablist"
+                    aria-label={t(
+                        "investment.title",
+                    )}
+                >
+                    {investmentLinks.map(
+                        (item, index) => {
+                            const isActive =
+                                index === activeIndex;
+
+                            return (
+                                <button
+                                    ref={(element) => {
+                                        cardRefs.current[index] =
+                                            element;
+                                    }}
+                                    className={`investment-card ${isActive
+                                        ? "is-active"
+                                        : ""
+                                        }`}
+                                    id={`investment-tab-${item.id}`}
+                                    type="button"
+                                    role="tab"
+                                    key={item.id}
+                                    tabIndex={isActive ? 0 : -1}
+                                    aria-selected={isActive}
+                                    aria-controls="investment-chart-panel"
+                                    onClick={() => {
+                                        activateProfile(index);
+                                    }}
+                                    onKeyDown={(event) => {
+                                        handleCardKeyDown(
+                                            event,
+                                            index,
+                                        );
+                                    }}
+                                >
+                                    <span className="investment-card-number">
+                                        {String(
+                                            index + 1,
+                                        ).padStart(2, "0")}
+                                    </span>
+
+                                    <h3>
+                                        {t(
+                                            `investment.items.${item.id}.title`,
+                                        )}
+                                    </h3>
+
+                                    <p>
+                                        {t(
+                                            `investment.items.${item.id}.description`,
+                                        )}
+                                    </p>
+
+                                    <span className="investment-card-link">
+                                        {t(
+                                            "investment.viewMore",
+                                        )}
+                                    </span>
+                                </button>
+                            );
+                        },
+                    )}
+                </div>
+
+                <div
                     className="investment-chart-panel"
                     id="investment-chart-panel"
                     role="tabpanel"
@@ -916,77 +984,10 @@ export function InvestmentSection() {
 
                         <p>
                             {t(
-                                "investment.chart.caption",
+                                `investment.items.${activeItem.id}.description`,
                             )}
                         </p>
                     </div>
-                </div>
-
-                <div
-                    className="investment-grid"
-                    role="tablist"
-                    aria-label={t(
-                        "investment.title",
-                    )}
-                >
-                    {investmentLinks.map(
-                        (item, index) => {
-                            const isActive =
-                                index === activeIndex;
-
-                            return (
-                                <button
-                                    ref={(element) => {
-                                        cardRefs.current[index] =
-                                            element;
-                                    }}
-                                    className={`investment-card ${isActive
-                                        ? "is-active"
-                                        : ""
-                                        }`}
-                                    id={`investment-tab-${item.id}`}
-                                    type="button"
-                                    role="tab"
-                                    key={item.id}
-                                    aria-selected={isActive}
-                                    aria-controls="investment-chart-panel"
-                                    onClick={() => {
-                                        activateProfile(index);
-                                    }}
-                                    onKeyDown={(event) => {
-                                        handleCardKeyDown(
-                                            event,
-                                            index,
-                                        );
-                                    }}
-                                >
-                                    <span className="investment-card-number">
-                                        {String(
-                                            index + 1,
-                                        ).padStart(2, "0")}
-                                    </span>
-
-                                    <h3>
-                                        {t(
-                                            `investment.items.${item.id}.title`,
-                                        )}
-                                    </h3>
-
-                                    <p>
-                                        {t(
-                                            `investment.items.${item.id}.description`,
-                                        )}
-                                    </p>
-
-                                    <span className="investment-card-link">
-                                        {t(
-                                            "investment.viewMore",
-                                        )}
-                                    </span>
-                                </button>
-                            );
-                        },
-                    )}
                 </div>
             </div>
         </section>
