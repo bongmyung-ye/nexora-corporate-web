@@ -220,7 +220,44 @@ const ko = {
     investment: {
         eyebrow: "투자 정보",
         title: "성장을 위한 투자 정보를 명확하게 제공합니다.",
+        description:
+            "Nexora의 성장 흐름과 서비스 운영 성과를 핵심 지표와 투자 정보로 확인할 수 있습니다.",
         viewMore: "자세히 보기",
+        metrics: {
+            growth: {
+                tab: "성장",
+                label: "디지털 성장 지수",
+                chartLabel:
+                    "2022년부터 2026년까지의 디지털 성장 지수 그래프",
+            },
+            expansion: {
+                tab: "확장",
+                label: "사업 확장 지수",
+                chartLabel:
+                    "2022년부터 2026년까지의 사업 확장 지수 그래프",
+            },
+            operations: {
+                tab: "운영",
+                label: "서비스 안정성",
+                chartLabel:
+                    "2022년부터 2026년까지의 서비스 안정성 그래프",
+            },
+        },
+        chart: {
+            scoreLabel: "핵심 성과 지수",
+            changeLabel: "전년 대비",
+            updatedLabel: "업데이트",
+            caption:
+                "Nexora 포트폴리오 표현을 위해 구성한 예시 지표입니다.",
+            series: {
+                serviceStability: "서비스 안정성",
+                investmentMomentum: "투자 성장 흐름",
+            },
+        },
+        resources: {
+            eyebrow: "Investor Resources",
+            title: "투자 정보 바로가기",
+        },
         items: {
             stockInformation: {
                 title: "주가 정보",

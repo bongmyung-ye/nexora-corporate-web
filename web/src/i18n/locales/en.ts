@@ -223,24 +223,60 @@ const en = {
     },
     investment: {
         eyebrow: "Investment",
-        title:
-            "Clear investment information for sustainable business growth.",
-        viewMore: "View more",
+        title: "Clear investor information for sustainable growth.",
+        description:
+            "Explore Nexora's growth trajectory and service performance through key indicators and investor resources.",
+        viewMore: "View details",
+        metrics: {
+            growth: {
+                tab: "Growth",
+                label: "Digital Growth Index",
+                chartLabel:
+                    "Digital growth index chart from 2022 to 2026",
+            },
+            expansion: {
+                tab: "Expansion",
+                label: "Business Expansion Index",
+                chartLabel:
+                    "Business expansion index chart from 2022 to 2026",
+            },
+            operations: {
+                tab: "Operations",
+                label: "Service Stability",
+                chartLabel:
+                    "Service stability chart from 2022 to 2026",
+            },
+        },
+        chart: {
+            scoreLabel: "Core Performance Index",
+            changeLabel: "Year over year",
+            updatedLabel: "Updated",
+            caption:
+                "Illustrative indicators created for the Nexora portfolio presentation.",
+            series: {
+                serviceStability: "Service Stability",
+                investmentMomentum: "Investment Momentum",
+            },
+        },
+        resources: {
+            eyebrow: "Investor Resources",
+            title: "Explore investor information",
+        },
         items: {
             stockInformation: {
                 title: "Stock Information",
                 description:
-                    "Key growth indicators and investment information presented in a clear and accessible format.",
+                    "Review key growth indicators and investor information in one place.",
             },
             financialReports: {
                 title: "Financial Reports",
                 description:
-                    "Financial results, reports, and operational performance organized for easy review.",
+                    "Access organized records of performance, reports, and operational results.",
             },
             irArchive: {
                 title: "IR Archive",
                 description:
-                    "Important investor materials organized for quick and convenient access.",
+                    "Find essential investor materials through a clearly structured archive.",
             },
         },
     },

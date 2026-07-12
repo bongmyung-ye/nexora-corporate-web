@@ -231,24 +231,60 @@ const ja = {
     },
     investment: {
         eyebrow: "投資情報",
-        title:
-            "事業成長に必要な投資情報を分かりやすく提供します。",
+        title: "成長に向けた投資情報を分かりやすく提供します。",
+        description:
+            "Nexoraの成長推移とサービス運用実績を、主要指標と投資情報から確認できます。",
         viewMore: "詳しく見る",
+        metrics: {
+            growth: {
+                tab: "成長",
+                label: "デジタル成長指数",
+                chartLabel:
+                    "2022年から2026年までのデジタル成長指数グラフ",
+            },
+            expansion: {
+                tab: "拡張",
+                label: "事業拡張指数",
+                chartLabel:
+                    "2022年から2026年までの事業拡張指数グラフ",
+            },
+            operations: {
+                tab: "運用",
+                label: "サービス安定性",
+                chartLabel:
+                    "2022年から2026年までのサービス安定性グラフ",
+            },
+        },
+        chart: {
+            scoreLabel: "主要パフォーマンス指数",
+            changeLabel: "前年比",
+            updatedLabel: "更新",
+            caption:
+                "Nexoraのポートフォリオ表現用に構成した参考指標です。",
+            series: {
+                serviceStability: "サービス安定性",
+                investmentMomentum: "投資成長推移",
+            },
+        },
+        resources: {
+            eyebrow: "Investor Resources",
+            title: "投資情報を見る",
+        },
         items: {
             stockInformation: {
-                title: "株価情報",
+                title: "株式情報",
                 description:
-                    "企業の成長指標と主要な投資情報を分かりやすく確認できるように構成します。",
+                    "企業の成長指標と主要な投資情報をまとめて確認できるように構成しています。",
             },
             financialReports: {
                 title: "財務報告書",
                 description:
-                    "業績、報告書、運営成果を体系的に確認できるように整理します。",
+                    "業績、報告書、運用実績を体系的に確認できるように整理しています。",
             },
             irArchive: {
                 title: "IR資料",
                 description:
-                    "投資家に必要な資料を、簡単に見つけられるよう分類して提供します。",
+                    "投資家に必要な主要資料を見つけやすい構成で提供します。",
             },
         },
     },

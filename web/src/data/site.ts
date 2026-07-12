@@ -158,6 +158,35 @@ export const investmentLinks = [
     },
 ] as const;
 
+export const investmentChart = {
+    score: 94,
+    scoreMax: 100,
+    changeRate: "+16.0%",
+    updatedAt: "2026.07",
+    labels: [
+        "2022.1",
+        "2022.2",
+        "2023.1",
+        "2023.2",
+        "2024.1",
+        "2024.2",
+        "2025.1",
+        "2025.2",
+        "2026.1",
+        "2026.2",
+    ],
+    series: [
+        {
+            id: "serviceStability",
+            values: [72, 118, 84, 146, 132, 168, 121, 194, 156, 208],
+        },
+        {
+            id: "investmentMomentum",
+            values: [58, 92, 76, 172, 108, 144, 96, 214, 138, 186],
+        },
+    ],
+} as const;
+
 export const footerLinks = [
     {
         id: "privacyPolicy",

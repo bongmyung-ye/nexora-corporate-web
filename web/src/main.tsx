@@ -7,6 +7,8 @@ import "./styles/hero.css";
 import "./styles/sustainability.css";
 import "./styles/business.css";
 import "./styles/media.css";
+import "./styles/investment.css";
+import "./styles/investment-chart-waveform.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
