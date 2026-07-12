@@ -62,59 +62,27 @@ export const aiStatements = [
 export const businessPortfolio = [
     {
         id: "globalInvestment",
-        title: "Global Investment",
-        description:
-            "미래 성장 가능성이 높은 기술과 서비스 영역을 중심으로 디지털 포트폴리오를 확장합니다.",
-        tag: "Investment",
     },
     {
         id: "ictSolutions",
-        title: "ICT Solutions",
-        description:
-            "기업과 사용자를 연결하는 디바이스, 플랫폼, 서비스 운영 경험을 설계합니다.",
-        tag: "ICT",
     },
     {
         id: "hospitalityPlatform",
-        title: "Hospitality Platform",
-        description:
-            "프리미엄 라이프스타일 경험을 디지털 서비스와 연결하는 브랜드 경험을 구축합니다.",
-        tag: "Lifestyle",
     },
     {
         id: "wellnessTechnology",
-        title: "Wellness Technology",
-        description:
-            "사용자의 일상 데이터를 기반으로 더 편리하고 건강한 생활 환경을 제안합니다.",
-        tag: "Wellness",
     },
     {
         id: "mobilityService",
-        title: "Mobility Service",
-        description:
-            "운영 데이터와 사용자 접점을 연결해 더 효율적인 이동 경험을 제공합니다.",
-        tag: "Mobility",
     },
     {
         id: "dataManagement",
-        title: "Data Management",
-        description:
-            "분산된 데이터를 정리하고 분석 가능한 구조로 전환해 비즈니스 의사결정을 지원합니다.",
-        tag: "Data",
     },
     {
         id: "aiExperience",
-        title: "AI Experience",
-        description:
-            "AI 기능을 제품 안에 자연스럽게 녹여 실제 사용자가 체감할 수 있는 경험을 만듭니다.",
-        tag: "AI",
     },
     {
         id: "digitalMarketing",
-        title: "Digital Marketing",
-        description:
-            "브랜드와 고객 접점을 데이터 기반으로 분석하고 더 정교한 커뮤니케이션을 설계합니다.",
-        tag: "Marketing",
     },
 ] as const;
 
@@ -209,12 +177,7 @@ export const footerLinks = [
     },
 ] as const;
 
-export const businessAreas = businessPortfolio
-    .slice(0, 3)
-    .map(({ title, description }) => ({
-        title,
-        description,
-    }));
+export const businessAreas = businessPortfolio.slice(0, 3);
 
 export const corporateHighlights = [
     {

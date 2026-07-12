@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App";
 import "./styles/hero.css";
 import "./styles/sustainability.css";
+import "./styles/business.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
