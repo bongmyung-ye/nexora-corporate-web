@@ -23,6 +23,7 @@ const ko = {
             "기업의 내일을 위한 지능형 디지털 경험을 설계합니다.",
         description:
             "Nexora는 데이터, 클라우드, 사용자 경험을 연결해 기업이 더 빠르게 성장할 수 있는 디지털 기반을 설계합니다.",
+        scrollLabel: "다음 영역 보기",
         actions: {
             business: "사업 보기",
             values: "핵심 가치",

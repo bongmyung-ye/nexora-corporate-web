@@ -23,6 +23,7 @@ const ja = {
             "企業の未来を支える、知的なデジタル体験を設計します。",
         description:
             "Nexoraはデータ、クラウド、ユーザー体験をつなぎ、企業の成長を支えるデジタル基盤を構築します。",
+        scrollLabel: "次のセクションを見る",
         actions: {
             business: "事業を見る",
             values: "私たちの価値",
@@ -64,7 +65,7 @@ const ja = {
             operationalEfficiency: {
                 title: "業務効率の改善",
                 description:
-                    "反復作業を減らし、サービス運用を改善することで持続的な成長を支えます。",
+                    "反復作業を減らし、サービス運用を改善して、持続可能な成長を支えます。",
             },
             longTermValue: {
                 title: "長期的な価値",

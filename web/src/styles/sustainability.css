@@ -1,0 +1,640 @@
+.section.sustainability-preview {
+  position: relative;
+  display: grid;
+  min-height: 1020px;
+  grid-template-columns:
+    minmax(0, 0.76fr)
+    minmax(540px, 1.24fr);
+  gap: clamp(64px, 8vw, 138px);
+  align-items: start;
+  margin-top: -1px;
+  padding:
+    clamp(150px, 18vh, 220px)
+    6vw
+    clamp(130px, 16vh, 190px);
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      180deg,
+      #05070c 0%,
+      #07101f 12%,
+      #0a1730 50%,
+      #111827 100%
+    );
+  isolation: isolate;
+}
+
+.sustainability-preview.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.sustainability-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sustainability-glow {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  filter: blur(12px);
+  will-change: transform;
+}
+
+.sustainability-glow-primary {
+  top: 5%;
+  right: -12%;
+  width: min(54vw, 880px);
+  aspect-ratio: 1;
+  background:
+    radial-gradient(
+      circle,
+      rgba(37, 99, 235, 0.3) 0%,
+      rgba(37, 99, 235, 0.08) 48%,
+      transparent 72%
+    );
+  animation:
+    sustainability-glow-primary 18s
+    ease-in-out infinite;
+}
+
+.sustainability-glow-secondary {
+  bottom: -26%;
+  left: -10%;
+  width: min(44vw, 720px);
+  aspect-ratio: 1;
+  background:
+    radial-gradient(
+      circle,
+      rgba(14, 165, 233, 0.2) 0%,
+      rgba(14, 165, 233, 0.04) 50%,
+      transparent 72%
+    );
+  animation:
+    sustainability-glow-secondary 20s
+    ease-in-out infinite;
+}
+
+.sustainability-arc {
+  position: absolute;
+  top: 11%;
+  right: -12%;
+  width: min(70vw, 1120px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 50%;
+  transform: rotate(-14deg);
+}
+
+.sustainability-arc::before,
+.sustainability-arc::after {
+  position: absolute;
+  border: 1px solid rgba(125, 211, 252, 0.08);
+  border-radius: inherit;
+  content: "";
+}
+
+.sustainability-arc::before {
+  inset: 10%;
+}
+
+.sustainability-arc::after {
+  inset: 20%;
+}
+
+.sustainability-grid-pattern {
+  position: absolute;
+  right: -5%;
+  bottom: 3%;
+  width: min(58vw, 920px);
+  height: 52%;
+  opacity: 0.1;
+  background-image:
+    linear-gradient(
+      rgba(148, 163, 184, 0.2) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.2) 1px,
+      transparent 1px
+    );
+  background-size: 64px 64px;
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      #000000 30%,
+      #000000 100%
+    );
+  transform: perspective(900px) rotateY(-9deg) rotateZ(-3deg);
+  transform-origin: center right;
+}
+
+.sustainability-copy {
+  position: sticky;
+  top: clamp(118px, 16vh, 170px);
+  z-index: 1;
+  display: flex;
+  max-width: 650px;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform: translate3d(0, 44px, 0);
+  transition:
+    opacity 0.9s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sustainability-preview.is-visible
+  .sustainability-copy {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.sustainability-copy .eyebrow {
+  color: #7dd3fc;
+}
+
+.sustainability-copy
+  .display-heading-section {
+  max-width: 650px;
+  color: #ffffff;
+  font-size: clamp(3rem, 4.25vw, 4.65rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.055em;
+}
+
+.sustainability-copy
+  .display-heading-section::after {
+  background:
+    linear-gradient(
+      90deg,
+      #38bdf8,
+      #93c5fd,
+      #38bdf8
+    );
+}
+
+.sustainability-copy > p {
+  max-width: 550px;
+  margin: 30px 0 0;
+  color: rgba(203, 213, 225, 0.8);
+  font-size: 1.03rem;
+  line-height: 1.78;
+  word-break: keep-all;
+}
+
+.sustainability-action {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 50px;
+  align-items: center;
+  gap: 14px;
+  margin-top: 38px;
+  padding: 0 22px;
+  color: #07101f;
+  background: #ffffff;
+  transition:
+    color 0.24s ease,
+    background 0.24s ease,
+    transform 0.24s ease;
+}
+
+.sustainability-action:hover {
+  color: #07101f;
+  background: #dbeafe;
+  transform: translateY(-3px);
+}
+
+.sustainability-action-icon {
+  display: inline-flex;
+  font-size: 1rem;
+  transition: transform 0.24s ease;
+}
+
+.sustainability-action:hover
+  .sustainability-action-icon {
+  transform: translate3d(3px, -3px, 0);
+}
+
+.sustainability-cards {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding-top: clamp(20px, 5vh, 72px);
+}
+
+.sustainability-card {
+  --card-offset: 0px;
+
+  position: relative;
+  display: flex;
+  min-height: 430px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.045)
+    );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 32px;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.16);
+  opacity: 0;
+  transform:
+    translate3d(
+      0,
+      calc(var(--card-offset) + 50px),
+      0
+    );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    opacity 0.85s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.85s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sustainability-card:nth-child(2) {
+  --card-offset: 96px;
+}
+
+.sustainability-card:nth-child(3) {
+  --card-offset: 28px;
+
+  min-height: 330px;
+  grid-column: 1 / -1;
+}
+
+.sustainability-preview.is-visible
+  .sustainability-card {
+  opacity: 1;
+  transform:
+    translate3d(
+      0,
+      var(--card-offset),
+      0
+    );
+}
+
+.sustainability-preview.is-visible
+  .sustainability-card:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.sustainability-preview.is-visible
+  .sustainability-card:nth-child(2) {
+  transition-delay: 0.22s;
+}
+
+.sustainability-preview.is-visible
+  .sustainability-card:nth-child(3) {
+  transition-delay: 0.34s;
+}
+
+.sustainability-preview.is-visible
+  .sustainability-card:hover {
+  border-color: rgba(125, 211, 252, 0.36);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.15),
+      rgba(59, 130, 246, 0.08)
+    );
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.24);
+  transform:
+    translate3d(
+      0,
+      calc(var(--card-offset) - 12px),
+      0
+    );
+}
+
+.sustainability-card::before {
+  position: absolute;
+  right: -120px;
+  bottom: -150px;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.2),
+      transparent 68%
+    );
+  content: "";
+  transition: transform 0.4s ease;
+}
+
+.sustainability-card:hover::before {
+  transform: translate3d(-24px, -22px, 0) scale(1.08);
+}
+
+.sustainability-card-top,
+.sustainability-card-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.sustainability-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.sustainability-card-index {
+  color: #7dd3fc;
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.sustainability-card-mark {
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(147, 197, 253, 0.32);
+  border-radius: 50%;
+}
+
+.sustainability-card-mark::before,
+.sustainability-card-mark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #93c5fd;
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.sustainability-card-mark::before {
+  width: 14px;
+  height: 1px;
+}
+
+.sustainability-card-mark::after {
+  width: 1px;
+  height: 14px;
+}
+
+.sustainability-card-copy {
+  max-width: 520px;
+}
+
+.sustainability-card h3 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-size: clamp(1.55rem, 2vw, 2.15rem);
+  line-height: 1.14;
+  letter-spacing: -0.045em;
+}
+
+.sustainability-card p {
+  margin: 0;
+  color: rgba(219, 234, 254, 0.76);
+  font-size: 0.98rem;
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+html[lang="en"]
+  .sustainability-copy
+  .display-heading-section {
+  font-size: clamp(2.8rem, 3.75vw, 4.2rem);
+  line-height: 1.08;
+}
+
+html[lang="ja"]
+  .sustainability-copy
+  .display-heading-section {
+  font-size: clamp(2.75rem, 3.7vw, 4.1rem);
+  line-height: 1.12;
+}
+
+html[lang="ja"] .sustainability-copy > p,
+html[lang="ja"] .sustainability-card h3,
+html[lang="ja"] .sustainability-card p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: strict;
+}
+
+@keyframes sustainability-glow-primary {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(-44px, 30px, 0)
+      scale(1.08);
+  }
+}
+
+@keyframes sustainability-glow-secondary {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform:
+      translate3d(36px, -28px, 0)
+      scale(0.94);
+  }
+}
+
+@media (max-width: 1180px) {
+  .section.sustainability-preview {
+    grid-template-columns:
+      minmax(0, 0.7fr)
+      minmax(480px, 1.3fr);
+    gap: 52px;
+  }
+
+  .sustainability-card {
+    min-height: 390px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section.sustainability-preview {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 64px;
+    padding:
+      118px
+      6vw
+      110px;
+  }
+
+  .sustainability-copy {
+    position: relative;
+    top: auto;
+    max-width: 720px;
+  }
+
+  .sustainability-copy
+    .display-heading-section {
+    max-width: 680px;
+    font-size: clamp(2.5rem, 8.5vw, 3.55rem);
+  }
+
+  html[lang="en"]
+    .sustainability-copy
+    .display-heading-section,
+  html[lang="ja"]
+    .sustainability-copy
+    .display-heading-section {
+    font-size: clamp(2.35rem, 7.8vw, 3.3rem);
+  }
+
+  .sustainability-cards {
+    max-width: 760px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 0;
+  }
+
+  .sustainability-card,
+  .sustainability-card:nth-child(2),
+  .sustainability-card:nth-child(3) {
+    --card-offset: 0px;
+
+    min-height: 320px;
+    grid-column: auto;
+  }
+
+  .sustainability-preview.is-visible
+    .sustainability-card:hover {
+    transform: translate3d(0, -8px, 0);
+  }
+
+  .sustainability-grid-pattern {
+    right: -46%;
+    width: 145vw;
+    opacity: 0.07;
+  }
+
+  .sustainability-arc {
+    top: 18%;
+    right: -58%;
+    width: 150vw;
+  }
+}
+
+@media (max-width: 620px) {
+  .section.sustainability-preview {
+    gap: 48px;
+    padding:
+      96px
+      22px
+      78px;
+  }
+
+  .sustainability-copy > p {
+    margin-top: 25px;
+    font-size: 0.96rem;
+  }
+
+  .sustainability-action {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sustainability-cards {
+    gap: 16px;
+  }
+
+  .sustainability-card,
+  .sustainability-card:nth-child(2),
+  .sustainability-card:nth-child(3) {
+    min-height: 250px;
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .sustainability-card-mark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sustainability-card h3 {
+    margin-bottom: 13px;
+    font-size: 1.45rem;
+  }
+
+  .sustainability-card p {
+    font-size: 0.94rem;
+    line-height: 1.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sustainability-copy,
+  .sustainability-card,
+  .sustainability-glow,
+  .sustainability-action,
+  .sustainability-action-icon {
+    animation: none;
+    transition-duration: 0.01ms;
+  }
+
+  .sustainability-copy,
+  .sustainability-card {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (min-width: 901px) {
+  .sustainability-card:nth-child(2) {
+    padding-bottom: 88px;
+  }
+}
+
+@media (max-width: 900px) and (hover: none) {
+  .sustainability-preview.is-visible
+    .sustainability-card:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+    background:
+      linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.11),
+        rgba(255, 255, 255, 0.045)
+      );
+    box-shadow:
+      0 28px 70px rgba(0, 0, 0, 0.16);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .sustainability-card:hover::before {
+    transform: none;
+  }
+}
