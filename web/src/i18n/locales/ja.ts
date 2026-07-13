@@ -116,7 +116,7 @@ const ja = {
     business: {
         eyebrow: "事業",
         title:
-            "AIとデジタル体験を軸に、事業領域を拡大します。",
+            "デジタル体験を軸に、事業領域を拡大します。",
         description:
             "さまざまな産業を一つのデジタルフローでつなぎ、それぞれのサービスが独立して拡張できる構造を設計します。",
         viewBusiness: "事業を見る",
@@ -327,11 +327,37 @@ const ja = {
         },
     },
     footer: {
+        brandTitle:
+            "技術を実際のサービスへつなげます。",
         description:
-            "ReactとTypeScriptで構築した架空のAI企業サイトです。モーションとレスポンシブUIを中心に設計しています。",
-        sections: {
-            links: "リンク",
-            company: "会社情報",
+            "Nexoraは、プロダクト設計から運用までを一つの流れでつなぐデジタルテクノロジー企業です。",
+        navigationLabel: "フッターナビゲーション",
+        navigation: {
+            company: {
+                title: "Nexora",
+                overview: "会社紹介",
+                business: "事業",
+            },
+            responsibility: {
+                title: "責任経営",
+                sustainability: "サステナビリティ",
+                media: "メディア",
+            },
+            information: {
+                title: "情報",
+                investment: "投資情報",
+                contact: "お問い合わせ",
+            },
+        },
+        policyLabel: "ポリシーと案内",
+        companyInfoLabel: "会社情報",
+        backToTop: "ページ上部へ",
+        relatedSite: "関連サイト",
+        selectSite: "サイトを選択",
+        relatedSites: {
+            project: "Nexoraプロジェクト",
+            profile: "開発者GitHub",
+            portfolio: "ポートフォリオ",
         },
         links: {
             privacyPolicy: "プライバシーポリシー",
@@ -339,7 +365,7 @@ const ja = {
             contact: "お問い合わせ",
             ethicsReport: "倫理通報",
         },
-        location: "デジタル戦略ラボ、ソウル",
+        location: "ソウル デジタル戦略研究所",
         copyright:
             "© {{year}} Nexora Labs. すべての権利を保有します。",
     },

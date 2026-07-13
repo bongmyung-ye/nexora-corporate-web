@@ -108,7 +108,7 @@ const en = {
     business: {
         eyebrow: "Business",
         title:
-            "Expanding our business portfolio through AI and digital experiences.",
+            "Expanding our business portfolio through digital experiences.",
         description:
             "We connect diverse industries through a unified digital flow and design each service to scale independently.",
         viewBusiness: "View business",
@@ -319,11 +319,37 @@ const en = {
         },
     },
     footer: {
+        brandTitle:
+            "Connecting technology to real services.",
         description:
-            "A fictional AI corporate website built with React and TypeScript, with a focus on motion and responsive UI.",
-        sections: {
-            links: "Links",
-            company: "Company Info",
+            "Nexora is a digital technology company that connects product design and operations in one continuous workflow.",
+        navigationLabel: "Footer navigation",
+        navigation: {
+            company: {
+                title: "Nexora",
+                overview: "Company",
+                business: "Business",
+            },
+            responsibility: {
+                title: "Responsibility",
+                sustainability: "Sustainability",
+                media: "Media",
+            },
+            information: {
+                title: "Information",
+                investment: "Investment",
+                contact: "Contact",
+            },
+        },
+        policyLabel: "Policies and information",
+        companyInfoLabel: "Company information",
+        backToTop: "Back to top",
+        relatedSite: "Related sites",
+        selectSite: "Select a site",
+        relatedSites: {
+            project: "Nexora Project",
+            profile: "Developer GitHub",
+            portfolio: "Portfolio",
         },
         links: {
             privacyPolicy: "Privacy Policy",

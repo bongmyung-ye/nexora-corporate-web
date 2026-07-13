@@ -205,6 +205,63 @@ export const footerLinks = [
     },
 ] as const;
 
+export const footerNavigationGroups = [
+    {
+        id: "company",
+        items: [
+            {
+                id: "overview",
+                href: "#company",
+            },
+            {
+                id: "business",
+                href: "#business",
+            },
+        ],
+    },
+    {
+        id: "responsibility",
+        items: [
+            {
+                id: "sustainability",
+                href: "#sustainability",
+            },
+            {
+                id: "media",
+                href: "#media",
+            },
+        ],
+    },
+    {
+        id: "information",
+        items: [
+            {
+                id: "investment",
+                href: "#investment",
+            },
+            {
+                id: "contact",
+                href: "#contact",
+            },
+        ],
+    },
+] as const;
+
+export const relatedSites = [
+    {
+        id: "project",
+        href: "https://github.com/bongmyung-ye/nexora-corporate-web",
+    },
+    {
+        id: "profile",
+        href: "https://github.com/bongmyung-ye",
+    },
+    {
+        id: "portfolio",
+        href: "https://crawlblog.xyz",
+    },
+] as const;
+
 export const businessAreas = businessPortfolio.slice(0, 3);
 
 export const corporateHighlights = [

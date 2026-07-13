@@ -29,7 +29,6 @@
   --shadow-card: 0 22px 70px rgba(15, 23, 42, 0.08);
   --shadow-panel: 0 26px 90px rgba(15, 23, 42, 0.14);
 
-  --footer-background: #0f172a;
 }
 
 :root[data-theme="dark"] {
@@ -63,7 +62,6 @@
   --shadow-card: 0 24px 80px rgba(0, 0, 0, 0.28);
   --shadow-panel: 0 30px 100px rgba(0, 0, 0, 0.36);
 
-  --footer-background: #050812;
 }
 
 html,
@@ -487,26 +485,6 @@ html.is-theme-changing *::after {
   color: #93c5fd;
 }
 
-.site-footer {
-  background: var(--footer-background);
-}
-
-.footer-brand strong,
-.footer-links span,
-.footer-info span {
-  color: #ffffff;
-}
-
-.footer-brand p,
-.footer-info p,
-.footer-links a {
-  color: #94a3b8;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-}
-
 :root[data-theme="dark"] .sustainability-preview {
   background:
     radial-gradient(
@@ -533,10 +511,6 @@ html.is-theme-changing *::after {
     rgba(96, 165, 250, 0.42),
     transparent
   );
-}
-
-:root[data-theme="dark"] .site-footer::before {
-  background: rgba(59, 130, 246, 0.12);
 }
 
 @media (max-width: 900px) {

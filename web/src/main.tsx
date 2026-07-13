@@ -11,6 +11,8 @@ import "./styles/investment.css";
 import "./styles/investment-chart-waveform.css";
 import "./styles/investment-responsive-navigation.css";
 import "./styles/sns-media.css";
+import "./styles/footer.css";
+import "./styles/footer-network-map.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
