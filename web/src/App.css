@@ -214,8 +214,7 @@
 .portfolio-card p,
 .press-panel p,
 .sns-card p,
-.investment-card p,
-.site-footer p {
+.investment-card p {
   color: #64748b;
   line-height: 1.75;
 }
@@ -725,54 +724,6 @@
   font-weight: 900;
 }
 
-.site-footer {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) 220px 300px;
-  gap: 42px;
-  padding: 58px 6vw;
-  color: #94a3b8;
-  background: #0f172a;
-}
-
-.footer-brand strong {
-  color: #ffffff;
-  font-size: 1.35rem;
-  letter-spacing: -0.04em;
-}
-
-.footer-brand p {
-  max-width: 520px;
-  margin: 12px 0 0;
-  color: #94a3b8;
-}
-
-.footer-links,
-.footer-info {
-  display: grid;
-  gap: 10px;
-  align-content: start;
-}
-
-.footer-links span,
-.footer-info span {
-  color: #ffffff;
-  font-weight: 900;
-}
-
-.footer-links a {
-  color: #94a3b8;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  color: #ffffff;
-}
-
-.footer-info p {
-  margin: 0;
-  color: #94a3b8;
-}
-
 @keyframes heroCopyIn {
   from {
     opacity: 0;
@@ -947,8 +898,7 @@
   .sustainability-preview,
   .ai-company-description,
   .media-layout,
-  .investment-section,
-  .site-footer {
+  .investment-section {
     grid-template-columns: 1fr;
   }
 
@@ -1410,41 +1360,6 @@
   z-index: 1;
 }
 
-.site-footer {
-  position: relative;
-  overflow: hidden;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  right: -160px;
-  bottom: -220px;
-  width: 420px;
-  height: 420px;
-  border-radius: 999px;
-  background: rgba(59, 130, 246, 0.08);
-  pointer-events: none;
-}
-
-.footer-brand,
-.footer-links,
-.footer-info {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-links a {
-  width: fit-content;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.footer-links a:hover {
-  transform: translateX(6px);
-}
-
 .media-section {
   position: relative;
   overflow: hidden;
@@ -1554,41 +1469,6 @@
 .investment-card span {
   position: relative;
   z-index: 1;
-}
-
-.site-footer {
-  position: relative;
-  overflow: hidden;
-}
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  right: -160px;
-  bottom: -220px;
-  width: 420px;
-  height: 420px;
-  border-radius: 999px;
-  background: rgba(59, 130, 246, 0.08);
-  pointer-events: none;
-}
-
-.footer-brand,
-.footer-links,
-.footer-info {
-  position: relative;
-  z-index: 1;
-}
-
-.footer-links a {
-  width: fit-content;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.footer-links a:hover {
-  transform: translateX(6px);
 }
 
 /* Display heading typography */
