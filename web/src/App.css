@@ -1688,3 +1688,31 @@ html[lang="ja"]
     transition-duration: 0.01ms;
   }
 }
+
+html {
+  scroll-padding-top: 88px;
+}
+
+#company,
+#sustainability,
+#business,
+#media,
+#investment,
+#contact {
+  scroll-margin-top: 88px;
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  #company,
+  #sustainability,
+  #business,
+  #media,
+  #investment,
+  #contact {
+    scroll-margin-top: 76px;
+  }
+}

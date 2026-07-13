@@ -82,8 +82,13 @@ const ko = {
         },
         description:
             "Nexora는 클라우드, 배포, 데이터베이스, 개발 플랫폼을 하나의 서비스 흐름으로 연결합니다. 각 기술은 실제 제품 운영과 확장성을 고려해 선택합니다.",
-        label:
-            "파트너 기술 · 클라우드 · 인프라 · 데이터베이스 · 개발",
+        categoryLabel: "파트너 기술 분야",
+        categoryItems: {
+            cloud: "클라우드",
+            infrastructure: "인프라",
+            database: "데이터베이스",
+            development: "개발",
+        },
         openWebsite: "{{name}} 공식 사이트 열기",
         categories: {
             cloudInfrastructure: "클라우드 인프라",
