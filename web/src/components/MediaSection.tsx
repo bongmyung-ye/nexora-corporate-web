@@ -34,20 +34,24 @@ function formatPublishedDate(
 
 export function MediaSection() {
     const { t, i18n } = useTranslation();
-    const [activePressIndex, setActivePressIndex] = useState(0);
+    const [activePressIndex, setActivePressIndex] =
+        useState(0);
 
     const currentLanguage =
         i18n.resolvedLanguage ?? i18n.language;
 
     const activePress = pressItems[activePressIndex];
-    const activeNumber = String(activePressIndex + 1).padStart(
-        2,
-        "0",
-    );
-    const totalNumber = String(pressItems.length).padStart(
-        2,
-        "0",
-    );
+    const activeNumber = String(
+        activePressIndex + 1,
+    ).padStart(2, "0");
+    const totalNumber = String(
+        pressItems.length,
+    ).padStart(2, "0");
+
+    const [
+        featuredSocialItem,
+        ...supportingSocialItems
+    ] = snsItems;
 
     return (
         <section
@@ -57,12 +61,15 @@ export function MediaSection() {
             data-reveal
         >
             <div className="media-section-intro">
-                <div className="section-heading media-heading">
+                <div className="section-heading media-heading heading-block">
                     <span className="eyebrow">
                         {t("media.press.eyebrow")}
                     </span>
 
-                    <h2 id="media-title">
+                    <h2
+                        className="display-heading display-heading-section"
+                        id="media-title"
+                    >
                         {t("media.press.title")}
                     </h2>
 
@@ -122,7 +129,6 @@ export function MediaSection() {
 
                         <div className="media-featured-footer">
                             <span>NEXORA MEDIA</span>
-
                             <strong aria-hidden="true">↗</strong>
                         </div>
                     </div>
@@ -133,11 +139,11 @@ export function MediaSection() {
                     aria-label={t("media.press.title")}
                 >
                     {pressItems.map((item, index) => {
-                        const isActive = index === activePressIndex;
-                        const itemNumber = String(index + 1).padStart(
-                            2,
-                            "0",
-                        );
+                        const isActive =
+                            index === activePressIndex;
+                        const itemNumber = String(
+                            index + 1,
+                        ).padStart(2, "0");
 
                         return (
                             <button
@@ -193,58 +199,133 @@ export function MediaSection() {
                 </div>
             </div>
 
-            <div className="media-social-section">
-                <div className="media-social-heading">
-                    <div className="section-heading compact-heading">
+            <div className="sns-media-section">
+                <div className="sns-media-heading">
+                    <div className="section-heading compact-heading heading-block">
                         <span className="eyebrow">
                             {t("media.sns.eyebrow")}
                         </span>
 
-                        <h2>{t("media.sns.title")}</h2>
+                        <h2 className="display-heading display-heading-section">
+                            {t("media.sns.title")}
+                        </h2>
                     </div>
 
-                    <span
-                        className="media-social-line"
-                        aria-hidden="true"
-                    />
+                    <a
+                        className="sns-media-view-all"
+                        href={featuredSocialItem.href}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <span>{t("media.sns.viewAll")}</span>
+                        <strong aria-hidden="true">↗</strong>
+                    </a>
                 </div>
 
-                <div className="media-social-list">
-                    {snsItems.map((item, index) => (
-                        <article
-                            className="media-social-card"
-                            key={item.id}
+                <div className="sns-media-layout">
+                    <a
+                        className="sns-media-featured"
+                        href={featuredSocialItem.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={t(
+                            `media.sns.items.${featuredSocialItem.id}.title`,
+                        )}
+                    >
+                        <span
+                            className="sns-media-featured-visual"
+                            aria-hidden="true"
                         >
-                            <div className="media-social-card-top">
-                                <span>
-                                    {t(`media.sns.items.${item.id}.type`)}
-                                </span>
+                            <i className="sns-media-featured-grid" />
+                            <i className="sns-media-featured-glow" />
+                            <i className="sns-media-featured-ring sns-media-featured-ring-large" />
+                            <i className="sns-media-featured-ring sns-media-featured-ring-small" />
+                            <b>01</b>
+                        </span>
 
+                        <span className="sns-media-featured-body">
+                            <span className="sns-media-featured-meta">
                                 <small>
-                                    {String(index + 1).padStart(2, "0")}
+                                    {t(
+                                        `media.sns.items.${featuredSocialItem.id}.type`,
+                                    )}
                                 </small>
-                            </div>
+                                <i>NEXORA STORY</i>
+                            </span>
 
-                            <div className="media-social-card-copy">
-                                <h3>
-                                    {t(`media.sns.items.${item.id}.title`)}
-                                </h3>
+                            <span className="sns-media-featured-copy">
+                                <strong>
+                                    {t(
+                                        `media.sns.items.${featuredSocialItem.id}.title`,
+                                    )}
+                                </strong>
 
                                 <p>
                                     {t(
-                                        `media.sns.items.${item.id}.description`,
+                                        `media.sns.items.${featuredSocialItem.id}.description`,
                                     )}
                                 </p>
-                            </div>
-
-                            <span
-                                className="media-social-card-arrow"
-                                aria-hidden="true"
-                            >
-                                ↗
                             </span>
-                        </article>
-                    ))}
+
+                            <span className="sns-media-featured-footer">
+                                <small>
+                                    {t("media.sns.openContent")}
+                                </small>
+                                <strong aria-hidden="true">↗</strong>
+                            </span>
+                        </span>
+                    </a>
+
+                    <div className="sns-media-support-list">
+                        {supportingSocialItems.map(
+                            (item, index) => (
+                                <a
+                                    className="sns-media-support-item"
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    key={item.id}
+                                    aria-label={t(
+                                        `media.sns.items.${item.id}.title`,
+                                    )}
+                                >
+                                    <span className="sns-media-support-number">
+                                        {String(index + 2).padStart(
+                                            2,
+                                            "0",
+                                        )}
+                                    </span>
+
+                                    <span className="sns-media-support-copy">
+                                        <small>
+                                            {t(
+                                                `media.sns.items.${item.id}.type`,
+                                            )}
+                                        </small>
+
+                                        <strong>
+                                            {t(
+                                                `media.sns.items.${item.id}.title`,
+                                            )}
+                                        </strong>
+
+                                        <p>
+                                            {t(
+                                                `media.sns.items.${item.id}.description`,
+                                            )}
+                                        </p>
+                                    </span>
+
+                                    <span
+                                        className="sns-media-support-arrow"
+                                        aria-hidden="true"
+                                    >
+                                        ↗
+                                    </span>
+                                </a>
+                            ),
+                        )}
+                    </div>
                 </div>
             </div>
         </section>

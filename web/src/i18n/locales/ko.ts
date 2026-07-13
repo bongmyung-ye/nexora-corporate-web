@@ -190,8 +190,10 @@ const ko = {
             },
         },
         sns: {
-            eyebrow: "콘텐츠",
+            eyebrow: "SNS Media",
             title: "개발 과정 살펴보기",
+            viewAll: "전체 콘텐츠 보기",
+            openContent: "콘텐츠 열기",
             items: {
                 corporateWebsite: {
                     type: "블로그",
@@ -214,114 +216,121 @@ const ko = {
                     description:
                         "데이터 기반 렌더링과 컴포넌트 분리가 프로젝트 품질에 미치는 영향을 다룹니다.",
                 },
+                productionWorkflow: {
+                    type: "노트",
+                    title:
+                        "운영까지 고려한 프론트엔드 작업 흐름",
+                    description:
+                        "컴포넌트 설계부터 다국어, 반응형, 배포 점검까지 실제 운영을 고려한 작업 흐름을 정리했습니다.",
+                },
             },
         },
     },
-    investment: {
-        eyebrow: "투자 정보",
-        title: "성장을 위한 투자 정보를 명확하게 제공합니다.",
-        description:
-            "Nexora의 성장 흐름과 서비스 운영 성과를 핵심 지표와 투자 정보로 확인할 수 있습니다.",
-        viewMore: "자세히 보기",
-        metrics: {
-            growth: {
-                tab: "성장",
-                label: "디지털 성장 지수",
-                chartLabel:
-                    "2022년부터 2026년까지의 디지털 성장 지수 그래프",
+        investment: {
+            eyebrow: "투자 정보",
+            title: "성장을 위한 투자 정보를 명확하게 제공합니다.",
+            description:
+                "Nexora의 성장 흐름과 서비스 운영 성과를 핵심 지표와 투자 정보로 확인할 수 있습니다.",
+            viewMore: "자세히 보기",
+            metrics: {
+                growth: {
+                    tab: "성장",
+                    label: "디지털 성장 지수",
+                    chartLabel:
+                        "2022년부터 2026년까지의 디지털 성장 지수 그래프",
+                },
+                expansion: {
+                    tab: "확장",
+                    label: "사업 확장 지수",
+                    chartLabel:
+                        "2022년부터 2026년까지의 사업 확장 지수 그래프",
+                },
+                operations: {
+                    tab: "운영",
+                    label: "서비스 안정성",
+                    chartLabel:
+                        "2022년부터 2026년까지의 서비스 안정성 그래프",
+                },
             },
-            expansion: {
-                tab: "확장",
-                label: "사업 확장 지수",
-                chartLabel:
-                    "2022년부터 2026년까지의 사업 확장 지수 그래프",
+            chart: {
+                scoreLabel: "핵심 성과 지수",
+                changeLabel: "전년 대비",
+                updatedLabel: "업데이트",
+                caption:
+                    "Nexora 포트폴리오 표현을 위해 구성한 예시 지표입니다.",
+                series: {
+                    serviceStability: "서비스 안정성",
+                    investmentMomentum: "투자 성장 흐름",
+                },
             },
-            operations: {
-                tab: "운영",
-                label: "서비스 안정성",
-                chartLabel:
-                    "2022년부터 2026년까지의 서비스 안정성 그래프",
+            resources: {
+                eyebrow: "Investor Resources",
+                title: "투자 정보 바로가기",
             },
-        },
-        chart: {
-            scoreLabel: "핵심 성과 지수",
-            changeLabel: "전년 대비",
-            updatedLabel: "업데이트",
-            caption:
-                "Nexora 포트폴리오 표현을 위해 구성한 예시 지표입니다.",
-            series: {
-                serviceStability: "서비스 안정성",
-                investmentMomentum: "투자 성장 흐름",
-            },
-        },
-        resources: {
-            eyebrow: "Investor Resources",
-            title: "투자 정보 바로가기",
-        },
-        items: {
-            stockInformation: {
-                title: "주가 정보",
-                description:
-                    "기업의 성장 지표와 주요 투자 정보를 한눈에 확인할 수 있도록 구성합니다.",
-            },
-            financialReports: {
-                title: "재무 보고서",
-                description:
-                    "실적, 보고서, 운영 성과를 체계적으로 확인할 수 있도록 정리합니다.",
-            },
-            irArchive: {
-                title: "IR 자료",
-                description:
-                    "투자자에게 필요한 주요 자료를 찾기 쉽도록 구분해 제공합니다.",
-            },
-        },
-    },
-    highlights: {
-        eyebrow: "프로젝트 구성",
-        title:
-            "구조와 안정성을 바탕으로 완성도를 높였습니다.",
-        description:
-            "Nexora Corporate Web은 화면만 구현한 예제가 아니라, 실제 기업형 웹사이트에 필요한 컴포넌트 분리, 반응형 레이아웃, 데이터 기반 렌더링을 함께 적용한 프로젝트입니다.",
-        metrics: {
-            reusableComponents: "재사용 컴포넌트",
-            responsiveSections: "반응형 섹션",
-            structuredDataGroups: "구조화된 데이터 그룹",
-        },
-        items: {
-            componentArchitecture: {
-                title: "컴포넌트 구조",
-                description:
-                    "섹션별 책임을 분리하고 반복되는 화면 요소를 재사용 가능한 컴포넌트로 구성했습니다.",
-            },
-            responsiveExperience: {
-                title: "반응형 화면",
-                description:
-                    "데스크톱부터 모바일까지 콘텐츠 흐름과 가독성이 유지되도록 화면을 조정했습니다.",
-            },
-            maintainableStructure: {
-                title: "유지보수 가능한 구조",
-                description:
-                    "문구와 데이터를 분리해 기능 확장과 다국어 관리가 쉬운 구조로 정리했습니다.",
+            items: {
+                stockInformation: {
+                    title: "주가 정보",
+                    description:
+                        "기업의 성장 지표와 주요 투자 정보를 한눈에 확인할 수 있도록 구성합니다.",
+                },
+                financialReports: {
+                    title: "재무 보고서",
+                    description:
+                        "실적, 보고서, 운영 성과를 체계적으로 확인할 수 있도록 정리합니다.",
+                },
+                irArchive: {
+                    title: "IR 자료",
+                    description:
+                        "투자자에게 필요한 주요 자료를 찾기 쉽도록 구분해 제공합니다.",
+                },
             },
         },
-    },
-    footer: {
-        description:
-            "React와 TypeScript로 구현한 가상의 AI 기업 웹사이트입니다. 모션과 반응형 UI를 중심으로 구성했습니다.",
-        sections: {
-            links: "바로가기",
-            company: "회사 정보",
+        highlights: {
+            eyebrow: "프로젝트 구성",
+            title:
+                "구조와 안정성을 바탕으로 완성도를 높였습니다.",
+            description:
+                "Nexora Corporate Web은 화면만 구현한 예제가 아니라, 실제 기업형 웹사이트에 필요한 컴포넌트 분리, 반응형 레이아웃, 데이터 기반 렌더링을 함께 적용한 프로젝트입니다.",
+            metrics: {
+                reusableComponents: "재사용 컴포넌트",
+                responsiveSections: "반응형 섹션",
+                structuredDataGroups: "구조화된 데이터 그룹",
+            },
+            items: {
+                componentArchitecture: {
+                    title: "컴포넌트 구조",
+                    description:
+                        "섹션별 책임을 분리하고 반복되는 화면 요소를 재사용 가능한 컴포넌트로 구성했습니다.",
+                },
+                responsiveExperience: {
+                    title: "반응형 화면",
+                    description:
+                        "데스크톱부터 모바일까지 콘텐츠 흐름과 가독성이 유지되도록 화면을 조정했습니다.",
+                },
+                maintainableStructure: {
+                    title: "유지보수 가능한 구조",
+                    description:
+                        "문구와 데이터를 분리해 기능 확장과 다국어 관리가 쉬운 구조로 정리했습니다.",
+                },
+            },
         },
-        links: {
-            privacyPolicy: "개인정보 처리방침",
-            sitemap: "사이트맵",
-            contact: "문의하기",
-            ethicsReport: "윤리 제보",
+        footer: {
+            description:
+                "React와 TypeScript로 구현한 가상의 AI 기업 웹사이트입니다. 모션과 반응형 UI를 중심으로 구성했습니다.",
+            sections: {
+                links: "바로가기",
+                company: "회사 정보",
+            },
+            links: {
+                privacyPolicy: "개인정보 처리방침",
+                sitemap: "사이트맵",
+                contact: "문의하기",
+                ethicsReport: "윤리 제보",
+            },
+            location: "서울 디지털 전략 연구소",
+            copyright:
+                "© {{year}} Nexora Labs. 모든 권리를 보유합니다.",
         },
-        location: "서울 디지털 전략 연구소",
-        copyright:
-            "© {{year}} Nexora Labs. 모든 권리를 보유합니다.",
-    },
-};
+    };
 
-export default ko;
+    export default ko;

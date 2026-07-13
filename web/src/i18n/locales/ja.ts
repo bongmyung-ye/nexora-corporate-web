@@ -202,8 +202,10 @@ const ja = {
             },
         },
         sns: {
-            eyebrow: "コンテンツ",
+            eyebrow: "SNS Media",
             title: "開発の舞台裏",
+            viewAll: "すべてのコンテンツを見る",
+            openContent: "コンテンツを開く",
             items: {
                 corporateWebsite: {
                     type: "ブログ",
@@ -225,6 +227,13 @@ const ja = {
                         "構造化されたコンテンツがポートフォリオの品質を高める理由",
                     description:
                         "データ駆動のレンダリングとコンポーネント分割が、プロジェクトの品質に与える影響を取り上げます。",
+                },
+                productionWorkflow: {
+                    type: "ノート",
+                    title:
+                        "運用を見据えたフロントエンド開発フロー",
+                    description:
+                        "コンポーネント設計、多言語対応、レスポンシブ対応、デプロイ確認までの実践的な流れをまとめました。",
                 },
             },
         },
