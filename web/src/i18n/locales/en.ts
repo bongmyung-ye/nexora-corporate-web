@@ -83,8 +83,13 @@ const en = {
         },
         description:
             "Nexora connects cloud services, deployment tools, databases, and development platforms into a single service workflow. Each technology is selected with product operations and scalability in mind.",
-        label:
-            "Technology partners · Cloud · Infrastructure · Database · Development",
+        categoryLabel: "Technology partner categories",
+        categoryItems: {
+            cloud: "Cloud",
+            infrastructure: "Infrastructure",
+            database: "Database",
+            development: "Development",
+        },
         openWebsite: "Open the official {{name}} website",
         categories: {
             cloudInfrastructure: "Cloud infrastructure",

@@ -83,8 +83,13 @@ const ja = {
         },
         description:
             "Nexoraはクラウド、デプロイ、データベース、開発プラットフォームを一つのサービスフローとして連携します。各技術は、実際の製品運用と拡張性を考慮して選定しています。",
-        label:
-            "パートナー技術 · クラウド · インフラ · データベース · 開発",
+        categoryLabel: "テクノロジーパートナー分野",
+        categoryItems: {
+            cloud: "クラウド",
+            infrastructure: "インフラ",
+            database: "データベース",
+            development: "開発",
+        },
         openWebsite: "{{name}}の公式サイトを開く",
         categories: {
             cloudInfrastructure: "クラウドインフラ",
